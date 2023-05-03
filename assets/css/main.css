@@ -3280,6 +3280,19 @@ input, select, textarea {
 			}
 
 		}
+		.image-container {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			height: 100%;
+		  }
+		  
+		  .circular-image {
+			width: 300px;
+			height: 300px;
+			border-radius: 75%;
+		  }
+		  
 
 /* Intro */
 
