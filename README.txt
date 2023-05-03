@@ -1,51 +1,50 @@
 Sure! Here's a sample README file for your portfolio:
 
-# Pranay's Portfolio
+Pranay's Portfolio
 
-## About Me
+About Me
 
 Hi, I'm Pranay Girde, a data analyst with 3 of experience in data analytics, data visualization, and data modeling. I have completed my Masters in Data Science, and I'm passionate about using data to drive insights and make better decisions. 
 
 In this portfolio, I've included some of my projects in SQL, Python, Excel, Power BI, Tableau, and Looker Studio. I hope you find these projects informative and interesting. 
 
-## Projects
+Projects
 
-### SQL Projects
+SQL Projects
 
-- [Project 1 Title](link-to-project): Brief description of the project.
-- [Project 2 Title](link-to-project): Brief description of the project.
-- [Project 3 Title](link-to-project): Brief description of the project.
+- COVID 19 DATA EXPLORATION
+- HOSUING DATA CLEANING
+- many more coming
 
-### Python Projects
+Python Projects
 
-- [Project 1 Title](link-to-project): Brief description of the project.
-- [Project 2 Title](link-to-project): Brief description of the project.
-- [Project 3 Title](link-to-project): Brief description of the project.
+- DIWALI SALES ANALYSIS
+- MOVIE CORRELATION ANALYSIS
+- many more coming
 
-### Excel Projects
+Excel Projects
 
-- [Project 1 Title](link-to-project): Brief description of the project.
-- [Project 2 Title](link-to-project): Brief description of the project.
-- [Project 3 Title](link-to-project): Brief description of the project.
+- BIKES SALES REPORT
+- many more coming
 
-### Power BI Projects
+Power BI Projects
 
-- [Project 1 Title](link-to-project): Brief description of the project.
-- [Project 2 Title](link-to-project): Brief description of the project.
-- [Project 3 Title](link-to-project): Brief description of the project.
+- JS BANK LTD REPORT
+- DATA PROFESSIONAL SURVEY BREAKDOWN
+- many more coming
 
-### Tableau Projects
 
-- [Project 1 Title](link-to-project): Brief description of the project.
-- [Project 2 Title](link-to-project): Brief description of the project.
-- [Project 3 Title](link-to-project): Brief description of the project.
+Tableau Projects
 
-### Looker Studio Projects
+- COVID DATA DASHBOARD
+- many more coming
 
-- [Project 1 Title](link-to-project): Brief description of the project.
-- [Project 2 Title](link-to-project): Brief description of the project.
-- [Project 3 Title](link-to-project): Brief description of the project.
+Looker Studio Projects
 
-## Contact Me
+- EURO MART REPORT
 
-Thank you for taking the time to view my portfolio. If you have any questions or would like to connect with me, please feel free to reach out via [LinkedIn](link-to-linkedin-profile) or email me at [your-email-address].
+Contact Me
+
+Thank you for taking the time to view my portfolio. If you have any questions or would like to connect with me, please feel free to reach out via 
+Linkedin:- https://www.linkedin.com/in/pranay-girde-b0501016b
+or email me prngrd8@gmail.com
