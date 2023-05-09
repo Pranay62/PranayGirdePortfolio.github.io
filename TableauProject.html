@@ -400,13 +400,33 @@ print 'It took ' + i + ' iterations to sort the deck.';
 								<h3>Address</h3>
 								<p>Nagpur,India</p>
 							</section>
+							
 							<section>
-								<h3>Phone</h3>
-								<p><a href="#">+91 7020561996</a></p>
+								<h3>Phone Number</h3>
+								<p><a onclick="copyToClipboard('+917020561996')">+91 7020561996</a></p>
 							</section>
+							
+							<script>
+							function copyToClipboard(text) {
+							  var input = document.createElement('input');
+							  input.setAttribute('value', text);
+							  document.body.appendChild(input);
+							  input.select();
+							  document.execCommand('copy');
+							  document.body.removeChild(input);
+							  var alertBox = document.createElement('div');
+							  alertBox.innerHTML = 'Phone number copied to clipboard!';
+							  alertBox.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px; background-color: #fff; border: 1px solid #000; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); z-index: 9999;';
+							  document.body.appendChild(alertBox);
+							  setTimeout(function() {
+								alertBox.parentNode.removeChild(alertBox);
+							  }, 1000);
+							}
+							</script>
+							
 							<section>
 								<h3>Email</h3>
-								<p><a href="#">prngrd8@gmail.com</a></p>
+								<p><a href="mailto:prngrd8@gmail.com">prngrd8@gmail.com</a></p>
 							</section>
 							<section>
 								<h3>Social</h3>
