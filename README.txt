@@ -1,4 +1,4 @@
-## Pranay's Portfolio
+##Pranay's Portfolio
 About Me
 Hi, I'm Pranay, a data analyst with 3 of experience in data analytics, data visualization, and data modelling. I have completed my Masters's in Data Science, and I'm passionate about using data to drive insights and make better decisions.
 
