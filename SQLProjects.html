@@ -46,47 +46,177 @@
 									<h1>SQL Projects<br />
 									</h1>
 								</header>
-								<h2 style="text-align:center;"><a href="#">COVID 19<br />
-									DATA EXPLORATION</a></h2>
+							
+
+
+								<!---Changes-->
+
+								<style>
+									.project-container {
+										border: 1px solid #ccc;
+										padding: 20px;
+										margin-bottom: 20px;
+										border-radius: 10px;
+										box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+										transition: box-shadow 0.3s;
+									}
+								
+									.project-container:hover {
+										box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+									}
+								
+									.project {
+										display: flex;
+										align-items: center;
+										margin-bottom: 20px;
+										transition: transform 0.3s;
+									}
+								
+									.project:hover {
+										transform: translateY(-5px);
+									}
+								
+									.project-image {
+										flex: 1;
+										max-width: 400px;
+										margin-right: 20px;
+										overflow: hidden;
+										border-radius: 10px;
+										box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+										transition: transform 0.3s;
+									}
+								
+									.project:hover .project-image {
+										transform: scale(1.05);
+									}
+								
+									.project-image img {
+										width: 100%;
+										height: auto;
+									}
+								
+									.project-details {
+										flex: 1;
+									}
+								
+									.project-title {
+										font-size: 24px;
+										margin-bottom: 10px;
+										color: #333;
+									}
+								
+									.project-actions {
+										text-align: center;
+										margin-top: 20px;
+									}
+								
+									.project-actions a {
+										display: inline-block;
+										margin: 10px;
+										padding: 10px 20px;
+										background-color: #428bca;
+										color: #fff;
+										border-radius: 4px;
+										text-decoration: none;
+										transition: background-color 0.3s;
+									}
+								
+									.project-actions a:hover {
+										background-color: #3071a9;
+									}
+								
+									/* JavaScript */
+									.enlarged {
+										transform: scale(1.2);
+										z-index: 1;
+									}
+								
+								</style>
+								
+								
+								
+								<div class="project-container">
+									<div class="project">
+										<div class="project-image">
+											<a href="https://github.com/Pranay62/Covid_Data_Project.git" class="image fit" onclick="enlargeImage(this.firstChild); return false;"><img src="images/coronavirus.png" alt="Project Image" /></a>
+										</div>
+										<div class="project-details">
+											<h2 class="project-title">Covid Data Project</h2>
+											<p class="project-description">This SQL project aims to explore COVID-19 data using various queries. The project uses two tables, namely CovidDeaths$ and CovidVaccinations$, to retrieve the necessary data.</p>
+											<div class="project-actions">
+												<a href="https://github.com/Pranay62/Covid_Data_Project.git" target="_blank" rel="noopener noreferrer" class="button">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="project-container">
+									<div class="project">
+										<div class="project-image">
+											<a href="https://github.com/Pranay62/Netflix_Data_Cleaning_SQL.git" class="image fit" onclick="enlargeImage(this.firstChild); return false;"><img src="images/NetflixDataset.jfif" alt="Project Image" /></a>
+										</div>
+										<div class="project-details">
+											<h2 class="project-title">Netflix Data Cleaning</h2>
+											<p class="project-description">This project focuses on a cleaned version of the original Netflix dataset. The dataset includes movies, TV shows, and original content added to Netflix from 2008 to 2021, spanning from the oldest content in 1925 to the latest in 2021. The main objective of this project is to showcase data cleaning and visualization skills using PostgreSQL and Tableau, respectively.
+
+												Dataset Details</p>
+											<div class="project-actions">
+												<a href="https://github.com/Pranay62/Netflix_Data_Cleaning_SQL.git" target="_blank" rel="noopener noreferrer" class="button">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="project-container">
+									<div class="project">
+										<div class="project-image">
+											<a href="https://github.com/Pranay62/Credit-Card-Spending-Habits-in-India.git" class="image fit" onclick="enlargeImage(this.firstChild); return false;"><img src="images/Credit_Card_Habbit_India.webp" alt="Project Image" /></a>
+										</div>
+										<div class="project-details">
+											<h2 class="project-title">Credit-Card-Spending-Habits-in-India</h2>
+											<p class="project-description">This project focuses on analyzing credit card spending habits in India. It involves querying a database to extract valuable insights related to cities, card types, expenses, and other transaction details.</p>
+											<div class="project-actions">
+												<a href="https://github.com/Pranay62/Credit-Card-Spending-Habits-in-India.git" target="_blank" rel="noopener noreferrer" class="button">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="project-container">
+									<div class="project">
+										<div class="project-image">
+											<a href="https://github.com/Pranay62/Tiny-Shop-Sales_SQL.git" class="image fit" onclick="enlargeImage(this.firstChild); return false;"><img src="images/Tiny-Shop-Sales.png" alt="Project Image" /></a>
+										</div>
+										<div class="project-details">
+											<h2 class="project-title">Tiny Shop Sales</h2>
+											<p class="project-description">This SQL case study focuses on analyzing sales data from a small shop. The case study utilizes PostgreSQL and covers various SQL concepts and techniques such as basic aggregations, CASE WHEN statements, window functions, joins, date-time functions, and common table expressions (CTEs).</p>
+											<div class="project-actions">
+												<a href="https://github.com/Pranay62/Tiny-Shop-Sales_SQL.git" target="_blank" rel="noopener noreferrer" class="button">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="project-container">
+									<div class="project">
+										<div class="project-image">
+											<a href="https://github.com/Pranay62/Housing_Data_Cleaning.git" class="image fit" onclick="enlargeImage(this.firstChild); return false;"><img src="images/Housing.jfif" alt="Project Image" /></a>
+										</div>
+										<div class="project-details">
+											<h2 class="project-title">Housing Data Cleaning</h2>
+											<p class="project-description">This project focuses on cleaning the Nashville Housing dataset by performing various data cleaning tasks. The dataset contains information about housing sales in Nashville from 2013 to 2018. The goal is to standardize date formats, populate null values for property addresses, break down addresses into individual columns, remove duplicates, and delete unused columns.</p>
+											<div class="project-actions">
+												<a href="https://github.com/Pranay62/Housing_Data_Cleaning.git" target="_blank" rel="noopener noreferrer" class="button">View Project</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+
+
+								<!---Changes-->
 									
-								<a href="https://github.com/Pranay62/Covid_Data_Project.git" class="image fit"><img src="images/coronavirus.png"/></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/Pranay62/Covid_Data_Project.git" class="button">View Project</a></li>
-								</ul><br /><br /><br /><br /><br /><br />
-
-
-								<h2 style="text-align:center;"><a href="#">Netflix<br />
-									Data Cleaning</a></h2>
-									
-								<a href="https://github.com/Pranay62/Netflix_Data_Cleaning_SQL.git" class="image fit"><img src="images/NetflixDataset.jfif"/></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/Pranay62/Netflix_Data_Cleaning_SQL.git" class="button">View Project</a></li>
-								</ul><br /><br /><br /><br /><br />
-
-
-								<h2 style="text-align:center;"><a href="#">Credit-Card-Spending<br />
-									-Habits-in-India</a></h2>
-									
-								<a href="https://github.com/Pranay62/Credit-Card-Spending-Habits-in-India.git" class="image fit"><img src="images/Credit_Card_Habbit_India.webp"/></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/Pranay62/Credit-Card-Spending-Habits-in-India.git" class="button">View Project</a></li>
-								</ul><br /><br /><br /><br /><br />
-
-								<h2 style="text-align:center;"><a href="#">Tiny <br />
-									Shop Sales</a></h2>
-									
-								<a href="https://github.com/Pranay62/Tiny-Shop-Sales_SQL.git" class="image fit"><img src="images/Tiny-Shop-Sales.png"/></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/Pranay62/Tiny-Shop-Sales_SQL.git" class="button">View Project</a></li>
-								</ul><br /><br /><br /><br /><br />
-
-
-								<h2 style="text-align:center;"><a href="#">Hosuing<br />
-									Data Cleaning</a></h2>
-									
-								<a href="https://github.com/Pranay62/Housing_Data_Cleaning.git" class="image fit"><img src="images/Housing.jfif"/></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/Pranay62/Housing_Data_Cleaning.git" class="button">View Project</a></li>
+								
 								</ul><br /><br /><br /><br /><br />
 
 
