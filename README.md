@@ -51,7 +51,7 @@ In this portfolio, I've included some of my projects in SQL, Python, Excel, Powe
 
 
 ### Mega Project on Sentimental Analysis
-- [SENTIMENTAL ANLYSIS ON MOBILE PHONES](https://github.com/Pranay62/SentimentalAnalysis_Project)
+- [SENTIMENTAL ANALYSIS ON MOBILE PHONES](https://github.com/Pranay62/SentimentalAnalysis_Project)
 
 
 ## Contact Me
