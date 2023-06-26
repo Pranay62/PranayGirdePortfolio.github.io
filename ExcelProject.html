@@ -81,16 +81,16 @@
 										overflow: hidden;
 										border-radius: 10px;
 										box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-										transition: transform 0.3s;
-									}
-								
-									.project:hover .project-image {
-										transform: scale(1.05);
 									}
 								
 									.project-image img {
 										width: 100%;
 										height: auto;
+										transition: transform 0.3s;
+									}
+								
+									.project-image:hover img {
+										transform: scale(1.05);
 									}
 								
 									.project-details {
@@ -103,14 +103,19 @@
 										color: #333;
 									}
 								
+									.project-description {
+										font-size: 16px;
+										line-height: 1.5;
+										color: #666;
+										margin-bottom: 10px;
+									}
+								
 									.project-actions {
-										text-align: center;
-										margin-top: 20px;
+										text-align: right;
 									}
 								
 									.project-actions a {
 										display: inline-block;
-										margin: 10px;
 										padding: 10px 20px;
 										background-color: #428bca;
 										color: #fff;
@@ -127,13 +132,13 @@
 								<div class="project-container">
 									<div class="project">
 										<div class="project-image">
-											<a href="https://github.com/Pranay62/Bike_Sale_Excel_Project.git" class="image fit" onclick="enlargeImage(this.firstChild); return false;"><img src="images/BikeSales.jfif" alt="Bike Sales Report" /></a>
+											<a href="https://github.com/Pranay62/Bike_Sale_Excel_Project.git" class="image fit"><img src="images/BikeSales.jfif" alt="Bike Sales Report" /></a>
 										</div>
 										<div class="project-details">
 											<h2 class="project-title">Bike Sales Report</h2>
 											<p class="project-description">This project contains an Excel spreadsheet that analyzes the sales data of a bike shop over a period of time. The data includes information about the bikes sold, their prices, and the customers who purchased them.</p>
 											<div class="project-actions">
-												<a href="https://github.com/Pranay62/Bike_Sale_Excel_Project.git" target="_blank" rel="noopener noreferrer" class="button">View Project</a>
+												<a href="https://github.com/Pranay62/Bike_Sale_Excel_Project.git">View Project</a>
 											</div>
 										</div>
 									</div>
@@ -142,13 +147,13 @@
 								<div class="project-container">
 									<div class="project">
 										<div class="project-image">
-											<a href="https://github.com/Pranay62/Store_Data_Analysis_Excel.git" class="image fit" onclick="enlargeImage(this.firstChild); return false;"><img src="images/Store_Data.jfif" alt="Store Sales Report" /></a>
+											<a href="https://github.com/Pranay62/Store_Data_Analysis_Excel.git" class="image fit"><img src="images/Store_Data.jfif" alt="Store Sales Report" /></a>
 										</div>
 										<div class="project-details">
 											<h2 class="project-title">Store Sales Report</h2>
 											<p class="project-description">This is a data analysis project for a store. The dataset used in this project contains information about the store's orders, customers, and sales.</p>
 											<div class="project-actions">
-												<a href="https://github.com/Pranay62/Store_Data_Analysis_Excel.git" target="_blank" rel="noopener noreferrer" class="button">View Project</a>
+												<a href="https://github.com/Pranay62/Store_Data_Analysis_Excel.git">View Project</a>
 											</div>
 										</div>
 									</div>

@@ -82,16 +82,16 @@
 										overflow: hidden;
 										border-radius: 10px;
 										box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-										transition: transform 0.3s;
-									}
-								
-									.project:hover .project-image {
-										transform: scale(1.05);
 									}
 								
 									.project-image img {
 										width: 100%;
 										height: auto;
+										transition: transform 0.3s;
+									}
+								
+									.project-image:hover img {
+										transform: scale(1.05);
 									}
 								
 									.project-details {
@@ -104,14 +104,19 @@
 										color: #333;
 									}
 								
+									.project-description {
+										font-size: 16px;
+										line-height: 1.5;
+										color: #666;
+										margin-bottom: 10px;
+									}
+								
 									.project-actions {
-										text-align: center;
-										margin-top: 20px;
+										text-align: right;
 									}
 								
 									.project-actions a {
 										display: inline-block;
-										margin: 10px;
 										padding: 10px 20px;
 										background-color: #428bca;
 										color: #fff;
@@ -123,22 +128,19 @@
 									.project-actions a:hover {
 										background-color: #3071a9;
 									}
-								
-									
-								
 								</style>
 								
 												
 								<div class="project-container">
 									<div class="project">
 										<div class="project-image">
-											<a href="https://github.com/Pranay62/Diwali_Sales_Data_Analysis.git" class="image fit" onclick="enlargeImage(this.firstChild); return false;"><img src="images/diwali-sale.jpg" alt="Diwali Sales Analysis" /></a>
+											<a href="https://github.com/Pranay62/Diwali_Sales_Data_Analysis.git" class="image fit"><img src="images/diwali-sale.jpg" alt="Diwali Sales Analysis" /></a>
 										</div>
 										<div class="project-details">
 											<h2 class="project-title">Diwali Sales Analysis</h2>
 											<p class="project-description">This is a Python project that analyzes sales data from a Diwali sales event. The project utilizes various Python libraries, including Pandas, NumPy, and Matplotlib, to perform data cleaning, exploratory data analysis, and data visualization.</p>
 											<div class="project-actions">
-												<a href="https://github.com/Pranay62/Diwali_Sales_Data_Analysis.git" target="_blank" rel="noopener noreferrer" class="button">View Project</a>
+												<a href="https://github.com/Pranay62/Diwali_Sales_Data_Analysis.git">View Project</a>
 											</div>
 										</div>
 									</div>
@@ -147,13 +149,13 @@
 								<div class="project-container">
 									<div class="project">
 										<div class="project-image">
-											<a href="https://github.com/Pranay62/Movie_Correlation_Python.git" class="image fit" onclick="enlargeImage(this.firstChild); return false;"><img src="images/movie.jpg" alt="Movie Correlation" /></a>
+											<a href="https://github.com/Pranay62/Movie_Correlation_Python.git" class="image fit"><img src="images/movie.jpg" alt="Movie Correlation" /></a>
 										</div>
 										<div class="project-details">
 											<h2 class="project-title">Movie Correlation</h2>
 											<p class="project-description">This project is a Python script that analyzes a dataset of movies and calculates the correlation between various movie features such as the year, rating, score, budget, and gross. The script utilizes the Pandas library to read and manipulate the data and the Seaborn library to create visualizations of the correlation matrix.</p>
 											<div class="project-actions">
-												<a href="https://github.com/Pranay62/Movie_Correlation_Python.git" target="_blank" rel="noopener noreferrer" class="button">View Project</a>
+												<a href="https://github.com/Pranay62/Movie_Correlation_Python.git">View Project</a>
 											</div>
 										</div>
 									</div>
