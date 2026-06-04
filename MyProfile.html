@@ -6,6 +6,7 @@
     <title>Experience & Education | Pranay Girde</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
@@ -19,6 +20,8 @@
     <style>
         body { background-color: #09090b; }
         .glass { background: rgba(24, 24, 27, 0.6); backdrop-filter: blur(12px); border: 1px solid #27272a; }
+        .blog-card { transition: all 0.3s ease; }
+        .blog-card:hover { border-color: #38bdf8; transform: translateY(-3px); }
     </style>
 </head>
 <body class="text-zinc-300 font-sans antialiased">
@@ -36,8 +39,8 @@
 
     <!-- HERO -->
     <header class="pt-32 pb-12 text-center px-6">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Experience & <span class="text-accent">Education</span></h1>
-        <p class="max-w-2xl mx-auto text-zinc-400">6+ years of evolving from data analysis to architecting enterprise-grade cloud pipelines and GenAI workflows.</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Experience & <span class="text-accent">Insights</span></h1>
+        <p class="max-w-2xl mx-auto text-zinc-400">6+ years of evolving from data analysis to architecting enterprise-grade cloud pipelines, microservices, and GenAI workflows.</p>
     </header>
 
     <!-- TIMELINE -->
@@ -47,57 +50,109 @@
             <!-- Nitor Infotech -->
             <div class="relative">
                 <span class="absolute -left-[41px] w-6 h-6 bg-accent rounded-full border-4 border-bg"></span>
-                <span class="text-sm text-accent font-mono font-bold">2023 - Present</span>
+                <span class="text-sm text-accent font-mono font-bold">Sep 2023 - Present</span>
                 <h3 class="text-xl font-bold text-white mt-1">Senior Data Engineer <span class="text-zinc-500 font-normal">@ Nitor Infotech</span></h3>
                 <ul class="mt-4 space-y-3 text-zinc-400 list-disc list-inside marker:text-accent">
                     <li>Streamlined nationwide data management for <span class="text-white font-semibold">Albertsons</span> (U.S. retailer) by developing a centralized Promo Data Mart, enhancing data accessibility by 80%.</li>
-                    <li>Designed automated pipelines using <span class="text-white font-semibold">PySpark, Azure Databricks, and SQL</span>, improving processing efficiency by 70%.</li>
-                    <li>Enabled real-time, data-driven marketing strategies across the U.S. through efficient data integration workflows.</li>
+                    <li>Architected a <span class="text-white font-semibold">zero-disruption Custom Product Hierarchy (CPH)</span> solution for Symphony Retail AI’s enterprise platform using <span class="text-white font-semibold">Azure Functions and Snowflake</span>.</li>
+                    <li>Developed an additive microservice architecture that accelerated custom analytics delivery by 40%.</li>
+                    <li>Optimized performance and cost through serverless scaling and intelligent caching, reducing query latency by 65%.</li>
+                </ul>
+            </div>
+
+            <!-- Freelance -->
+            <div class="relative">
+                <span class="absolute -left-[41px] w-6 h-6 bg-zinc-600 rounded-full border-4 border-bg"></span>
+                <span class="text-sm text-zinc-500 font-mono">Mar 2023 - Nov 2023</span>
+                <h3 class="text-xl font-bold text-white mt-1">Freelance Data Analyst & Analytics Engineer</h3>
+                <ul class="mt-4 space-y-3 text-zinc-400 list-disc list-inside marker:text-zinc-600">
+                    <li>Delivered dynamic Power BI dashboards and <span class="text-white font-semibold">Airflow-powered ETL pipelines</span>, improving client operational efficiency by 30%.</li>
+                    <li>Implemented Power Automate workflows to streamline repetitive tasks across organizational processes.</li>
                 </ul>
             </div>
 
             <!-- Whole Foods -->
             <div class="relative">
                 <span class="absolute -left-[41px] w-6 h-6 bg-zinc-600 rounded-full border-4 border-bg"></span>
-                <span class="text-sm text-zinc-500 font-mono">2022 - 2023</span>
-                <h3 class="text-xl font-bold text-white mt-1">Support Analyst <span class="text-zinc-500 font-normal">@ Whole Foods Market</span></h3>
+                <span class="text-sm text-zinc-500 font-mono">Feb 2022 - Feb 2023</span>
+                <h3 class="text-xl font-bold text-white mt-1">Support Analyst <span class="text-zinc-500 font-normal">@ Whole Foods Market (Amazon)</span></h3>
                 <ul class="mt-4 space-y-3 text-zinc-400 list-disc list-inside marker:text-zinc-600">
-                    <li>Developed <span class="text-white font-semibold">VBA macros</span> to automate e-commerce tasks, enhancing operational efficiency by 30%.</li>
-                    <li>Maintained centralized order matrices ensuring 95% fulfillment rates and compliance with SOPs.</li>
-                    <li>Diagnosed and resolved order processing issues, reducing order errors by 20%.</li>
+                    <li>Automated order workflows with <span class="text-white font-semibold">VBA macros</span>, slashing processing time by 50% and reducing errors by 75%.</li>
+                    <li>Organized and maintained a central order matrix in Excel, accurately recording 500+ orders/week in compliance with e-commerce SOPs.</li>
                 </ul>
             </div>
 
             <!-- TCS -->
             <div class="relative">
                 <span class="absolute -left-[41px] w-6 h-6 bg-zinc-600 rounded-full border-4 border-bg"></span>
-                <span class="text-sm text-zinc-500 font-mono">2020 - 2021</span>
-                <h3 class="text-xl font-bold text-white mt-1">Data Analyst <span class="text-zinc-500 font-normal">@ Tata Consultancy Services</span></h3>
+                <span class="text-sm text-zinc-500 font-mono">Jan 2020 - Sep 2021</span>
+                <h3 class="text-xl font-bold text-white mt-1">Data Analyst & RPA Developer <span class="text-zinc-500 font-normal">@ Tata Consultancy Services</span></h3>
                 <ul class="mt-4 space-y-3 text-zinc-400 list-disc list-inside marker:text-zinc-600">
-                    <li>Analyzed large datasets using SQL and Python, enhancing data accuracy by 95%.</li>
-                    <li>Deployed Power BI/Tableau dashboards, cutting reporting time by 50%.</li>
                     <li>Collaborated with IT to implement a new data warehouse, reducing manual data entry by 80%.</li>
+                    <li>Designed RPA solutions using <span class="text-white font-semibold">Automation Anywhere & UiPath</span> for Banking and E-commerce domains.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section class="max-w-4xl mx-auto px-6 pb-24">
-        <h2 class="text-3xl font-bold text-white mb-12 text-center">Education</h2>
-        <div class="grid md:grid-cols-2 gap-6">
+    <!-- EDUCATION & CERTS -->
+    <section class="max-w-6xl mx-auto px-6 pb-24">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">Education & <span class="text-accent">Certifications</span></h2>
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
             <div class="glass p-8 rounded-2xl border border-border hover:border-accent transition-all">
                 <span class="text-xs font-semibold text-accent uppercase tracking-wider">Master's Degree</span>
                 <h3 class="text-xl font-bold text-white mt-2">MS in Data Science</h3>
                 <p class="text-zinc-400 mt-1">Kingston University, London (2022 - 2023)</p>
-                <p class="text-zinc-500 text-sm mt-4">Grade: 70% (Merit). Focus on Deep Reinforcement Learning, NLP, and Advanced Analytics.</p>
+                <p class="text-zinc-500 text-sm mt-4">Grade: 70% (Merit). Focus on Deep Reinforcement Learning & NLP.</p>
             </div>
             <div class="glass p-8 rounded-2xl border border-border hover:border-accent transition-all">
                 <span class="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Bachelor's Degree</span>
                 <h3 class="text-xl font-bold text-white mt-2">B.E. in Computer Technology</h3>
-                <p class="text-zinc-400 mt-1">Yeshwant Rao Chavan College of Engineering (2015 - 2019)</p>
-                <p class="text-zinc-500 text-sm mt-4">Grade: 8.2/10 CGPA. Foundation in Computer Science and Software Engineering.</p>
+                <p class="text-zinc-400 mt-1">YCCE, Nagpur (2015 - 2019)</p>
+                <p class="text-zinc-500 text-sm mt-4">Grade: 8.2/10 CGPA.</p>
             </div>
+        </div>
+
+        <!-- Certifications Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+            <div class="glass p-4 rounded-lg flex items-center space-x-3">
+                <i class="fas fa-certificate text-yellow-500"></i>
+                <span class="text-zinc-300">Google Data Analytics Professional</span>
+            </div>
+            <div class="glass p-4 rounded-lg flex items-center space-x-3">
+                <i class="fas fa-robot text-purple-400"></i>
+                <span class="text-zinc-300">Automation Anywhere Certified</span>
+            </div>
+            <div class="glass p-4 rounded-lg flex items-center space-x-3">
+                <i class="fas fa-database text-blue-400"></i>
+                <span class="text-zinc-300">Spark SQL & DataFrames</span>
+            </div>
+            <div class="glass p-4 rounded-lg flex items-center space-x-3">
+                <i class="fas fa-chart-bar text-emerald-400"></i>
+                <span class="text-zinc-300">Masterclass: Excel, PowerBI, Tableau</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- THOUGHT LEADERSHIP (BLOGS) -->
+    <section id="blogs" class="max-w-6xl mx-auto px-6 pb-24 border-t border-border pt-24">
+        <h2 class="text-3xl font-bold text-white mb-4 text-center">Technical <span class="text-accent">Insights</span></h2>
+        <p class="text-zinc-400 text-center mb-12 max-w-2xl mx-auto">Writing about the future of AI, Vector Databases, and Software Engineering.</p>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <a href="https://www.nitorinfotech.com/blog/empowering-ai-with-ollama-the-future-of-software-engineering/" target="_blank" class="blog-card glass p-8 rounded-2xl border border-border block">
+                <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Article • AI Engineering</span>
+                <h3 class="text-xl font-bold text-white mt-2 mb-4">Empowering AI with Ollama: The Future of Software Engineering</h3>
+                <p class="text-zinc-400 text-sm flex-grow mb-4">Exploring how local LLMs and Ollama are shifting the paradigm of enterprise software development and data privacy.</p>
+                <span class="text-accent text-sm font-semibold hover:underline">Read Article <i class="fas fa-arrow-right ml-1"></i></span>
+            </a>
+
+            <a href="https://www.nitorinfotech.com/blog/unleashing-the-power-of-qdrant-cloud-a-vector-search-revolution/" target="_blank" class="blog-card glass p-8 rounded-2xl border border-border block">
+                <span class="text-xs font-bold text-accent uppercase tracking-wider">Article • Vector Search</span>
+                <h3 class="text-xl font-bold text-white mt-2 mb-4">Unleashing the Power of Qdrant Cloud: A Vector Search Revolution</h3>
+                <p class="text-zinc-400 text-sm flex-grow mb-4">Deep dive into Qdrant Cloud and how vector databases are the backbone of modern RAG and Agentic AI architectures.</p>
+                <span class="text-accent text-sm font-semibold hover:underline">Read Article <i class="fas fa-arrow-right ml-1"></i></span>
+            </a>
         </div>
     </section>
 
