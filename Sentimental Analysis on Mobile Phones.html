@@ -1,254 +1,82 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>PRANAY GIRDE</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Case Study | Pranay Girde</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{bg:'#09090b',card:'#18181b',border:'#27272a',accent:'#38bdf8'}}}}</script>
+    <style>body{background-color:#09090b}.glass{background:rgba(24,24,27,0.6);backdrop-filter:blur(12px);border:1px solid #27272a}</style>
+</head>
+<body class="text-zinc-300 font-sans antialiased">
+    <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center max-w-7xl mx-auto mt-4 rounded-xl">
+        <a href="index.html" class="text-xl font-bold text-white tracking-tight">PG<span class="text-accent">.</span></a>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-zinc-400"><a href="index.html#work" class="hover:text-white transition">Case Studies</a><a href="projects.html" class="hover:text-white transition">All Projects</a><a href="MyProfile.html" class="hover:text-white transition">Experience</a></div>
+        <a href="Resume_PRANAY_2026.pdf" class="bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-zinc-200 transition">Resume</a>
+    </nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Hero -->
+    <header class="pt-32 pb-12 text-center px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-pink-500/10 rounded-full blur-3xl -z-10"></div>
+        <span class="inline-block px-4 py-1.5 rounded-full bg-pink-500/10 text-pink-400 text-xs font-bold uppercase tracking-wider mb-4"><i class="fas fa-brain mr-2"></i> NLP & Machine Learning</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">Social Media-Assisted<br><span class="text-accent">Sentiment Analysis</span></h1>
+        <p class="max-w-2xl mx-auto text-zinc-400 text-lg">A Master's level deep-dive into consumer emotion tracking across Twitter, Amazon, and YouTube using Python and Tableau.</p>
+    </header>
 
-				<!-- Header -->
-				<header id="header">
-					<!--	<a href="index.html" class="logo">Massively</a> -->
-					</header>
+    <!-- Main Content -->
+    <section class="max-w-5xl mx-auto px-6 pb-24 space-y-12">
+        
+        <!-- Abstract & Objectives -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass p-8 rounded-2xl border border-border">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center"><i class="fas fa-book-open text-accent mr-3"></i> Abstract</h2>
+                <p class="text-zinc-400 leading-relaxed">Sentiment Analysis (Opinion Mining) extracts insights from unstructured text data. This project utilizes text processing and ML techniques to collect reliable data from social platforms and provide actionable business insights regarding mobile phone features and brand perception.</p>
+            </div>
+            <div class="glass p-8 rounded-2xl border border-border">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center"><i class="fas fa-bullseye text-pink-400 mr-3"></i> Core Objectives</h2>
+                <ul class="space-y-3 text-zinc-400">
+                    <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i> Analyze user responses to mobile features via social listening.</li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i> Identify emerging topics of interest in real-time.</li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i> Prioritize customer expectations for R&D teams.</li>
+                </ul>
+            </div>
+        </div>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">My Portfolio</a></li>
-						<!--	<li><a href="generic.html">Generic Page</a></li> -->
-						<!--	<li class="active"><a href="elements.html">Elements Reference</a></li> -->
-						</ul>
-						<ul class="icons">
-							<li><a href="https://twitter.com/girde_pranay" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<!--	<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-						<!--	<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
-							<li><a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="icon brands fa-linkedin"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+        <!-- Tech Stack Used -->
+        <div class="glass p-8 rounded-2xl border border-border">
+            <h2 class="text-xl font-bold text-white mb-6 text-center">The NLP Pipeline</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="p-4 bg-zinc-800/50 rounded-xl"><i class="fab fa-python text-2xl text-yellow-400 mb-2"></i><p class="text-sm text-zinc-300">Python / Jupyter</p></div>
+                <div class="p-4 bg-zinc-800/50 rounded-xl"><i class="fas fa-database text-2xl text-blue-400 mb-2"></i><p class="text-sm text-zinc-300">SQL / PyODBC</p></div>
+                <div class="p-4 bg-zinc-800/50 rounded-xl"><i class="fas fa-robot text-2xl text-purple-400 mb-2"></i><p class="text-sm text-zinc-300">Scikit-Learn / Keras</p></div>
+                <div class="p-4 bg-zinc-800/50 rounded-xl"><i class="fas fa-chart-bar text-2xl text-emerald-400 mb-2"></i><p class="text-sm text-zinc-300">Tableau / TextBlob</p></div>
+            </div>
+        </div>
 
-				<!-- Main -->
-					<div id="main">
+        <!-- Workflow Diagram Placeholder -->
+        <div class="glass rounded-2xl border border-border overflow-hidden">
+            <div class="h-64 w-full bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80');">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#18181b] via-[#18181b]/80 to-transparent flex items-center p-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">End-to-End Architecture</h3>
+                        <p class="text-zinc-300 max-w-md">Data Collection (APIs/Scraping) ➔ Preprocessing (Stopwords/Lemmatization) ➔ ML Modeling (Naive Bayes/Logistic Regression) ➔ Tableau Visualization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-						<!-- Post -->
-							<section class="post">
-								<header class="major">
-									<h1>Sentimental Analysis<br />
-									on Mobile Phones</h1>
-								</header>
-<!-- changes -->
-<style>
-    /* Abstract Section */
-    .abstract {
-        margin-bottom: 40px;
-    }
+        <!-- Link to Repo -->
+        <div class="text-center">
+            <a href="https://github.com/Pranay62/SentimentalAnalysis_Project.git" target="_blank" class="inline-block bg-accent text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-sky-400 transition shadow-lg shadow-accent/20">View Full GitHub Repository <i class="fab fa-github ml-2"></i></a>
+        </div>
 
-    .abstract h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
+    </section>
 
-    .abstract p {
-        font-size: 16px;
-        line-height: 1.5;
-        color: #777;
-        margin-bottom: 20px;
-    }
-
-    /* Aims and Objectives Section */
-    .objectives {
-        margin-bottom: 40px;
-    }
-
-    .objectives h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-
-    .objectives p {
-        font-size: 16px;
-        line-height: 1.5;
-        color: #777;
-    }
-
-    .objectives ul {
-        list-style-type: disc;
-        margin-left: 20px;
-    }
-
-    /* Image Section */
-    .image-section {
-        margin-bottom: 40px;
-    }
-
-    .image-section h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-
-    .image-gallery {
-        margin-top: 20px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 20px;
-    }
-
-    .image-gallery img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-    }
-
-    .image-gallery img:hover {
-        transform: scale(1.05);
-    }
-
-    /* Left & Right Section */
-    .left-right-section {
-        margin-bottom: 40px;
-    }
-
-    .left-right-section h3 {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-    .left-right-section p {
-        font-size: 16px;
-        line-height: 1.5;
-        color: #777;
-    }
-
-    .left-right-section .workflow-image {
-        display: block;
-        margin: 20px auto;
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-</style>
-
-<div class="abstract">
-    <h2>Abstract</h2>
-    <p>Sentiment Analysis (Opinion Investigation) is a well-known field for examining and drawing insights from text data from various sources, including YouTube, Twitter, and Amazon. This project aims to gather data from a social media platform and use analytics to discover people's general feelings about a certain topic. The project utilizes text processing, data extraction, and sentiment analysis techniques to collect reliable data and provide written insights based on the analysis.</p>
-    <p><strong>Index Terms:</strong> Sentiment Analysis, Machine Learning, Accuracy, Mobile, Text processing, Analysis</p>
-</div>
-
-<div class="objectives">
-    <h2>Aims and Objectives</h2>
-    <p>The project aims to:</p>
-    <ul>
-        <li>Better analyze user responses to mobile features using social listening and provide timely feedback to the feature enhancement team.</li>
-        <li>Quickly identify new topics of interest.</li>
-        <li>Determine the reception of a feature through sentiment analysis.</li>
-        <li>Conduct research and make business decisions that cater to the target audience's interests using independent guidance and sentiment analysis.</li>
-        <li>Prioritize customers' expectations for advanced mobile phone utility.</li>
-    </ul>
-</div>
-
-<div class="image-section">
-    <h2>Image Gallery</h2>
-    <div class="image-gallery">
-        <img src="images/10.png" alt="Image 1">
-        <img src="images/1.png" alt="Image 2">
-        <img src="images/2.png" alt="Image 3">
-        <img src="images/3.png" alt="Image 4">
-        <img src="images/4.png" alt="Image 5">
-        <img src="images/5.png" alt="Image 6">
-        <img src="images/7.png" alt="Image 7">
-        <img src="images/8.png" alt="Image 8">
-        <img src="images/9.png" alt="Image 9">
-        <img src="images/6.png" alt="Image 10">
-    </div>
-</div>
-
-<div class="left-right-section">
-    <h3>Left &amp; Right</h3>
-    <p>
-        <img src="images/Design Flow.png" alt="Workflow Diagram" class="workflow-image">
-        <br /><br /><br />
-        In this project, various sentiment analysis techniques are used to gather data from different social media platforms. The collected data is processed and analyzed using Python packages. The findings are visualized using Tableau, including category visualization to illustrate sentiments about different product attributes and time-based visualization to track changes in people's perceptions over time. The workflow diagram illustrates the steps involved in the project, such as learning the fundamentals, data collection, data preprocessing, sentiment analysis, and visualization.
-    </p>
-</div>
-
-
-<!-- changes -->
-<br /><br /><br />
-
-								
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Nagpur,India</p>
-							</section>
-							
-							<section>
-								<h3>Phone Number</h3>
-								<p><a onclick="copyToClipboard('+917020561996')">+91 7020561996</a></p>
-							</section>
-							
-							<script>
-							function copyToClipboard(text) {
-							  var input = document.createElement('input');
-							  input.setAttribute('value', text);
-							  document.body.appendChild(input);
-							  input.select();
-							  document.execCommand('copy');
-							  document.body.removeChild(input);
-							  var alertBox = document.createElement('div');
-							  alertBox.innerHTML = 'Phone number copied to clipboard!';
-							  alertBox.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px; background-color: #fff; border: 1px solid #000; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); z-index: 9999;';
-							  document.body.appendChild(alertBox);
-							  setTimeout(function() {
-								alertBox.parentNode.removeChild(alertBox);
-							  }, 1000);
-							}
-							</script>
-							
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto:prngrd8@gmail.com">prngrd8@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://twitter.com/girde_pranay" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<!--<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-									<li><a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-								<!--	<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li> -->
-								</ul>
-							</section>
-						</section>
-					</footer> 
-
-				<!-- Copyright -->
-				<!--	<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>  -->
-
-			</div>  
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <footer class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center border-t border-border text-zinc-500 text-sm">
+        <p>&copy; 2026 Pranay Girde.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0"><a href="mailto:prngrd8@gmail.com" class="hover:text-white transition">prngrd8@gmail.com</a><a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="hover:text-white transition">LinkedIn</a></div>
+    </footer>
+</body>
 </html>
