@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation Lab | POCs & Value Adds | Pranay Girde</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{bg:'#09090b',card:'#18181b',border:'#27272a',accent:'#38bdf8'}}}}</script>
+    <style>body{background-color:#09090b}.glass{background:rgba(24,24,27,0.6);backdrop-filter:blur(12px);border:1px solid #27272a}.poc-card{transition:all .3s ease}.poc-card:hover{transform:translateY(-5px);border-color:#38bdf8;box-shadow:0 0 30px rgba(56,189,248,0.1)}</style>
+</head>
+<body class="text-zinc-300 font-sans antialiased">
+    
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center max-w-7xl mx-auto mt-4 rounded-xl">
+        <a href="index.html" class="text-xl font-bold text-white tracking-tight">PG<span class="text-accent">.</span></a>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-zinc-400">
+            <a href="index.html#work" class="hover:text-white transition">Case Studies</a>
+            <a href="projects.html" class="hover:text-white transition">All Projects</a>
+            <a href="innovation.html" class="text-white transition">Innovation Lab</a>
+            <a href="MyProfile.html" class="hover:text-white transition">Experience</a>
+        </div>
+        <a href="YOUR_GOOGLE_DRIVE_RESUME_LINK_HERE" target="_blank" class="bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-zinc-200 transition">Resume</a>
+    </nav>
+
+    <!-- HERO -->
+    <header class="pt-32 pb-12 text-center px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-500/10 rounded-full blur-3xl -z-10"></div>
+        <span class="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-wider mb-4"><i class="fas fa-flask mr-2"></i> R&D & Value Engineering</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">The <span class="text-accent">Innovation Lab</span></h1>
+        <p class="max-w-3xl mx-auto text-zinc-400 text-lg">Internal tools, Multi-Agent AI workflows, and automation frameworks built to optimize costs, modernize legacy systems, and accelerate engineering lifecycles.</p>
+    </header>
+
+    <!-- VIDEO SHOWCASE -->
+    <section class="max-w-5xl mx-auto px-6 pb-16">
+        <div class="glass rounded-2xl border border-border p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-white mb-4 flex items-center"><i class="fas fa-play-circle text-accent mr-3"></i> POC Workflow Demonstration</h2>
+            <p class="text-zinc-400 mb-6">A walkthrough of our autonomous multi-agent systems and automated data validation frameworks in action.</p>
+            
+            <!-- VIDEO PLACEHOLDER -->
+            <div class="relative w-full overflow-hidden rounded-xl border border-border" style="padding-top: 56.25%;">
+                <!-- INSTRUCTIONS: Replace the src below with your Google Drive Embed Link -->
+                <iframe class="absolute top-0 left-0 w-full h-full" src="https://drive.google.com/file/d/YOUR_VIDEO_ID/preview" width="100%" height="100%" allow="autoplay" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- POC GRID -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- POC 1: GenAI Cost Tracker -->
+            <div class="poc-card glass rounded-2xl p-8 border border-border flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-lg bg-yellow-500/10 flex items-center justify-center text-yellow-400 text-xl mr-4"><i class="fas fa-coins"></i></div>
+                    <span class="text-xs font-bold text-yellow-400 uppercase tracking-wider">GenAI / FinOps</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">GenAI Data Analysis with Cost Tracking</h3>
+                <p class="text-zinc-400 text-sm flex-grow mb-4">Developed a Python utility that transforms standard CSV migration diffs into interactive HTML reports with natural language insights. Integrated a strict cost-tracking mechanism using <span class="text-white font-semibold">tiktoken</span> to monitor API token usage, ensuring financial transparency and preventing AI budget overruns during large-scale data audits.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Python</span>
+                    <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">GPT-4o / Claude</span>
+                    <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">tiktoken</span>
+                </div>
+            </div>
+
+            <!-- POC 2: GenAI Comparison Analyzer -->
+            <div class="poc-card glass rounded-2xl p-8 border border-border flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl mr-4"><i class="fas fa-brain"></i></div>
+                    <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">LLM Orchestration</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">GenAI Comparison Analyzer</h3>
+                <p class="text-zinc-400 text-sm flex-grow mb-4">Engineered an automated file comparison framework leveraging GPT-4o and Claude to identify complex data patterns and anomalies. By utilizing strategic data sampling and custom prompting, the system drastically reduces human error in manual processing while generating comprehensive audit trails for enterprise data migrations.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">LLM APIs</span>
+                    <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Data Sampling</span>
+                    <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">HTML Viz</span>
+                </div>
+            </div>
+
+            <!-- POC 3: Spark & COBOL Migration -->
+            <div class="poc-card glass rounded-2xl p-8 border border-border flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 text-xl mr-4"><i class="fas fa-database"></i></div>
+                    <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Cloud Data Validation</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Automated Migration Validation (Spark & COBOL)</h3>
+                <p class="text-zinc-400 text-sm flex-grow mb-4">Architected a cloud-native validation framework using <span class="text-white font-semibold">Apache Spark</span> to streamline legacy on-prem migrations. The system automates field-level discrepancy detection across terabytes of data (added, deleted, updated records), feeding into Power BI/Tableau dashboards. <span class="text-accent font-semibold">Reduced manual QA effort by 80%</span> while maintaining absolute precision.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Apache Spark</span>
+                    <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Python</span>
+                    <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Power BI</span>
+                </div>
+            </div>
+
+            <!-- POC 4: CrewAI API Testing -->
+            <div class="poc-card glass rounded-2xl p-8 border border-border flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-xl mr-4"><i class="fas fa-robot"></i></div>
+                    <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Agentic AI / QA</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Agent-Driven API Test Automation</h3>
+                <p class="text-zinc-400 text-sm flex-grow mb-4">Built an autonomous multi-agent workflow using <span class="text-white font-semibold">CrewAI</span>. An "AI Designer" agent interprets user stories to generate edge-case scenarios, while an "Automation Engineer" agent writes executable <span class="text-white font-semibold">Robot Framework</span> scripts. Features a human-in-the-loop stage for logic refinement before automated execution.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">CrewAI</span>
+                    <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Robot Framework</span>
+                    <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Multi-Agent</span>
+                </div>
+            </div>
+
+            <!-- POC 5: KSH to Snowflake -->
+            <div class="poc-card glass rounded-2xl p-8 border border-border flex flex-col md:col-span-2">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 text-xl mr-4"><i class="fas fa-terminal"></i></div>
+                    <span class="text-xs font-bold text-orange-400 uppercase tracking-wider">Legacy Modernization</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">KSH to Snowflake Migration Architecture</h3>
+                <p class="text-zinc-400 text-sm flex-grow mb-4">Designed a technical framework utilizing collaborative AI agents to transition legacy KSH shell scripts into modern Snowflake and Python environments. The toolkit automates the parsing of SQL block submissions, re-implements logic via Python templates, and leverages <span class="text-white font-semibold">Google Gemini</span> to auto-generate rigorous test scenarios for supply chain inventory managers. A complete paradigm shift in database operations modernization.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="px-3 py-1 bg-zinc-800 rounded text-xs text-zinc-300">crewAI</span>
+                    <span class="px-3 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Snowflake</span>
+                    <span class="px-3 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Google Gemini</span>
+                    <span class="px-3 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Legacy Migration</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center border-t border-border text-zinc-500 text-sm">
+        <p>&copy; 2026 Pranay Girde. Crafted for scale.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="mailto:prngrd8@gmail.com" class="hover:text-white transition">prngrd8@gmail.com</a>
+            <a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="hover:text-white transition">LinkedIn</a>
+            <a href="https://github.com/Pranay62" class="hover:text-white transition">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>
