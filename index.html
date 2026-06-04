@@ -1,334 +1,227 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranay Girde | Senior Data Engineer & GenAI</title>
+    <!-- Tailwind CSS for modern styling (No local CSS files needed!) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        bg: '#09090b',
+                        card: '#18181b',
+                        border: '#27272a',
+                        accent: '#38bdf8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #09090b; }
+        .glass { background: rgba(24, 24, 27, 0.6); backdrop-filter: blur(12px); border: 1px solid #27272a; }
+        .marquee-container { overflow: hidden; white-space: nowrap; }
+        .marquee-content {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .bento-card { transition: all 0.3s ease; }
+        .bento-card:hover { transform: translateY(-5px); border-color: #38bdf8; box-shadow: 0 0 30px rgba(56, 189, 248, 0.1); }
+    </style>
+</head>
+<body class="text-zinc-300 font-sans antialiased">
 
-<html>
-	<head>
-		<title>PRANAY GIRDE</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center max-w-7xl mx-auto mt-4 rounded-xl">
+        <div class="text-xl font-bold text-white tracking-tight">PG<span class="text-accent">.</span></div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-zinc-400">
+            <a href="#work" class="hover:text-white transition">Case Studies</a>
+            <a href="#experience" class="hover:text-white transition">Experience</a>
+            <a href="#stack" class="hover:text-white transition">Stack</a>
+        </div>
+        <a href="Resume_PRANAY_2026.pdf" class="bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-zinc-200 transition">Resume</a>
+    </nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+    <!-- HERO SECTION -->
+    <header class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+        <div class="inline-flex items-center space-x-2 glass px-4 py-1.5 rounded-full text-xs text-zinc-400 mb-8">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            <span>Open to Senior Data Engineering & AI Roles</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6">
+            Architecting Data &<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-600">GenAI Workflows.</span>
+        </h1>
+        <p class="max-w-2xl text-lg text-zinc-400 mb-10 leading-relaxed">
+            I'm <span class="text-white font-semibold">Pranay Girde</span>. I build scalable Azure data pipelines, RAG architectures, and intelligent automation systems that turn raw data into automated business decisions.
+        </p>
+        <div class="flex space-x-4">
+            <a href="#work" class="bg-accent text-black px-6 py-3 rounded-lg font-semibold hover:bg-sky-400 transition">View Case Studies</a>
+            <a href="https://github.com/Pranay62" class="glass px-6 py-3 rounded-lg font-semibold text-white hover:bg-zinc-800 transition">GitHub <i class="fab fa-github ml-2"></i></a>
+        </div>
+    </header>
 
-				<!-- Intro -->
-					<div id="intro">
+    <!-- MARQUEE (SCROLLING BANNER) -->
+    <div class="py-12 border-y border-border bg-zinc-900/30 marquee-container">
+        <div class="marquee-content text-2xl font-bold text-zinc-700 tracking-widest uppercase">
+            <span class="mx-8">★ 80% Faster Reporting via GenAI</span>
+            <span class="mx-8">★ Centralized Data Mart for Albertsons</span>
+            <span class="mx-8">★ Days to 3 Hours via RPA Automation</span>
+            <span class="mx-8">★ MS Data Science, Kingston Univ.</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="mx-8">★ 80% Faster Reporting via GenAI</span>
+            <span class="mx-8">★ Centralized Data Mart for Albertsons</span>
+            <span class="mx-8">★ Days to 3 Hours via RPA Automation</span>
+            <span class="mx-8">★ MS Data Science, Kingston Univ.</span>
+        </div>
+    </div>
 
-						<div class="header">
-							<div class="image-container">
-								<img src="images/Myimage.jpeg" alt="" class="circular-image">
-							  </div>
-							</div> 
-						
-						<h1>Pranay's<br />
-						Portfolio</h1>
-						<p>Masters in Data Science|<br /> 
-						DATA ANALYST well versed with SQL,Python,Excel,PowerBi,Looker Studio <br />and also well versed with Azure Cloud
-						</br><a href="https://www.linkedin.com/in/pranay-girde-b0501016b">@PranayGirde</a>.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+    <!-- BENTO BOX CASE STUDIES -->
+    <section id="work" class="max-w-7xl mx-auto px-6 py-24">
+        <h2 class="text-3xl font-bold text-white mb-12">Featured <span class="text-accent">Case Studies</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
+            
+            <!-- Card 1: GenAI (Large) -->
+            <div class="bento-card glass rounded-2xl p-8 md:col-span-2 flex flex-col justify-between border border-border relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-accent/20 transition-all"></div>
+                <div class="relative z-10">
+                    <span class="text-xs font-semibold text-accent uppercase tracking-wider">GenAI / RAG Pipeline</span>
+                    <h3 class="text-2xl font-bold text-white mt-2 mb-4">Intelligent Financial Workflow Automation</h3>
+                    <p class="text-zinc-400 max-w-md">Engineered a modular RAG system using LlamaIndex and Qdrant, automating quarterly financial report generation and reducing manual retrieval time by 65%.</p>
+                </div>
+                <div class="flex space-x-2 relative z-10">
+                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Python</span>
+                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">LlamaIndex</span>
+                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Qdrant</span>
+                </div>
+            </div>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Profile</a>
-					</header>
+            <!-- Card 2: Azure (Medium) -->
+            <div class="bento-card glass rounded-2xl p-8 flex flex-col justify-between border border-border">
+                <span class="text-xs font-semibold text-sky-500 uppercase tracking-wider">Cloud Data Engineering</span>
+                <h3 class="text-xl font-bold text-white mt-2">Albertsons Promo Data Mart</h3>
+                <p class="text-zinc-400 text-sm mt-2 flex-grow">Architected centralized data pipelines using PySpark and Azure Databricks, boosting data accessibility by 80%.</p>
+                <div class="flex space-x-2 mt-4">
+                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Azure</span>
+                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">PySpark</span>
+                </div>
+            </div>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Information</a></li>
-						<!--	<li><a href="generic.html">Generic Page</a></li> -->
-						<!--	<li><a href="elements.html">Elements Reference</a></li> -->
-						</ul>
-						<ul class="icons">
-							<li><a href="https://twitter.com/girde_pranay" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<!--	<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-						<!--	<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
-						<li><a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="icon brands fa-linkedin"><span class="label">GitHub</span></a></li>
-						
-						<!--	<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li> -->
-						        
-						</ul>
-					</nav>
+            <!-- Card 3: RPA (Medium) -->
+            <div class="bento-card glass rounded-2xl p-8 flex flex-col justify-between border border-border">
+                <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">RPA / Automation</span>
+                <h3 class="text-xl font-bold text-white mt-2">RBI Bank Creation Automation</h3>
+                <p class="text-zinc-400 text-sm mt-2 flex-grow">Deployed Automation Anywhere bots to streamline bank creation, reducing turnaround time from several days to just 3 hours.</p>
+                <div class="flex space-x-2 mt-4">
+                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">RPA</span>
+                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Automation Anywhere</span>
+                </div>
+            </div>
 
-				<!-- Main -->
-					<div id="main">
+            <!-- Card 4: Dashboards (Large) -->
+            <div class="bento-card glass rounded-2xl p-8 md:col-span-2 flex flex-col justify-between border border-border">
+                <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Business Intelligence</span>
+                <h3 class="text-2xl font-bold text-white mt-2 mb-4">Interactive Analytics & Dashboards</h3>
+                <p class="text-zinc-400 max-w-md">Designed enterprise-grade Power BI and Tableau ecosystems for retail and banking sectors, cutting reporting time by 50% and enabling real-time executive decision-making.</p>
+                <div class="flex space-x-2 mt-4">
+                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Power BI</span>
+                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Tableau</span>
+                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">SQL</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<!-- <span class="date">April 01, 2023</span> -->
-									<h2><a href="#">My<br />
-									Profile</a></h2>
-									<p>🔍 As a 🔬 data analyst with a 🎓 Master's degree in data science and a passion for deep reinforcement learning, I bring hands-on experience in SQL, PowerBI, Tableau, and Azure to generate actionable insights from complex data. 💡 With a track record of excellence, including a merit grade in my Master's degree, I am committed to ongoing learning and professional development to drive 🚀 success for any data-driven organization. 💪
+    <!-- EXPERIENCE TIMELINE -->
+    <section id="experience" class="max-w-4xl mx-auto px-6 py-24">
+        <h2 class="text-3xl font-bold text-white mb-12">Experience <span class="text-accent">Timeline</span></h2>
+        <div class="space-y-12 border-l border-border pl-8 relative">
+            <!-- Job 1 -->
+            <div class="relative">
+                <span class="absolute -left-[41px] w-6 h-6 bg-accent rounded-full border-4 border-bg"></span>
+                <span class="text-sm text-zinc-500 font-mono">2023 - Present</span>
+                <h3 class="text-xl font-bold text-white mt-1">Senior Data Engineer <span class="text-zinc-500 font-normal">@ Nitor Infotech</span></h3>
+                <p class="text-zinc-400 mt-3 leading-relaxed">Spearheaded the Albertsons Promo Data Mart architecture. Designed automated PySpark/Azure pipelines improving processing efficiency by 70%. Integrated GenAI workflows for financial reporting.</p>
+            </div>
+            <!-- Job 2 -->
+            <div class="relative">
+                <span class="absolute -left-[41px] w-6 h-6 bg-zinc-600 rounded-full border-4 border-bg"></span>
+                <span class="text-sm text-zinc-500 font-mono">2022 - 2023</span>
+                <h3 class="text-xl font-bold text-white mt-1">Support Analyst <span class="text-zinc-500 font-normal">@ Whole Foods Market</span></h3>
+                <p class="text-zinc-400 mt-3 leading-relaxed">Automated e-commerce order processing using VBA macros, enhancing operational efficiency by 30%. Maintained centralized order matrices ensuring 95% fulfillment rates.</p>
+            </div>
+            <!-- Job 3 -->
+            <div class="relative">
+                <span class="absolute -left-[41px] w-6 h-6 bg-zinc-600 rounded-full border-4 border-bg"></span>
+                <span class="text-sm text-zinc-500 font-mono">2020 - 2021</span>
+                <h3 class="text-xl font-bold text-white mt-1">Data Analyst <span class="text-zinc-500 font-normal">@ TCS</span></h3>
+                <p class="text-zinc-400 mt-3 leading-relaxed">Analyzed large datasets using SQL and Python, enhancing data accuracy by 95%. Deployed Power BI/Tableau dashboards, cutting reporting time in half.</p>
+            </div>
+        </div>
+    </section>
 
-										<br>Feel free to ask any questions or let me know how I can assist you further! 😊</p>
-								</header>
-								<!-- <a href="#" class="image fit"><img src="images/Myimage1.jpg" alt="" /></a> -->
-								<ul class="actions special">
-								<li><a href="MyProfile.html" class="button large">Full Story</a></li> 
-								</ul>
-							</article>
+    <!-- TECH STACK -->
+    <section id="stack" class="max-w-7xl mx-auto px-6 py-24 border-t border-border">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">The <span class="text-accent">Stack</span></h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="glass p-6 rounded-xl">
+                <h4 class="text-accent font-semibold mb-4 uppercase text-xs tracking-wider">Data Engineering</h4>
+                <ul class="space-y-2 text-zinc-300 text-sm">
+                    <li>Azure Data Factory</li>
+                    <li>Databricks / PySpark</li>
+                    <li>SQL / PostgreSQL</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+            <div class="glass p-6 rounded-xl">
+                <h4 class="text-purple-400 font-semibold mb-4 uppercase text-xs tracking-wider">AI & Automation</h4>
+                <ul class="space-y-2 text-zinc-300 text-sm">
+                    <li>LlamaIndex</li>
+                    <li>Qdrant (Vector DB)</li>
+                    <li>Automation Anywhere</li>
+                    <li>Power Automate</li>
+                </ul>
+            </div>
+            <div class="glass p-6 rounded-xl">
+                <h4 class="text-emerald-400 font-semibold mb-4 uppercase text-xs tracking-wider">BI & Analytics</h4>
+                <ul class="space-y-2 text-zinc-300 text-sm">
+                    <li>Power BI (DAX)</li>
+                    <li>Tableau</li>
+                    <li>Looker Studio</li>
+                    <li>Excel / VBA</li>
+                </ul>
+            </div>
+            <div class="glass p-6 rounded-xl">
+                <h4 class="text-sky-400 font-semibold mb-4 uppercase text-xs tracking-wider">Cloud & DevOps</h4>
+                <ul class="space-y-2 text-zinc-300 text-sm">
+                    <li>Azure Cloud</li>
+                    <li>GCP</li>
+                    <li>Git / GitHub</li>
+                    <li>CI/CD Pipelines</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-									<!--	<span class="date">January 01, 2023</span> -->
-										<h2><a href="#">SQL<br />
-										Project</a></h2>
-									</header>
-									<!-- <a href="#" class="image fit"><img src="images/SQL.png" alt="" /></a>  -->
-									<a href="SQLProjects.html" class="image fit"><img src="images/SQL.jpg" alt="" style="max-width:75%;"/></a>
-									<p>SQL projects are an essential component of a data analyst's portfolio, showcasing their ability to extract and manipulate data from various sources using SQL queries to generate valuable insights for decision-making.</p>
-									<ul class="actions special">
-										<li><a href="SQLProjects.html" class="button">All Projects</a></li>
-									</ul>
-								</article>
+    <!-- FOOTER -->
+    <footer id="contact" class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center border-t border-border text-zinc-500 text-sm">
+        <p>&copy; 2026 Pranay Girde. Crafted for scale.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="mailto:prngrd8@gmail.com" class="hover:text-white transition"><i class="fas fa-envelope mr-2"></i> prngrd8@gmail.com</a>
+            <a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="hover:text-white transition"><i class="fab fa-linkedin mr-2"></i> LinkedIn</a>
+            <a href="https://github.com/Pranay62" class="hover:text-white transition"><i class="fab fa-github mr-2"></i> GitHub</a>
+        </div>
+    </footer>
 
-							<!--	<article>
-									<header>
-										 <span class="date">Sep 01, 2021</span>
-										Project</a></h2>
-									</header>
-									<a href="AzureProject.html" class="image fit"><img src="images/Azure.webp" alt="" style="max-width:75%;"/></a>
-									<p>Excel projects are a crucial element of a data analyst's portfolio, highlighting their proficiency in organizing and analyzing data using Excel's advanced features to generate impactful visualizations and reports.</p>
-									<ul class="actions special">
-										<li><a href="AzureProject.html" class="button">All Projects</a></li>
-									</ul>
-								</article> -->	
-								
-								<article>
-
-									
-									<header>
-										<!-- <span class="date">Sep 01, 2021</span> -->
-										<h2><a href="#">Excel<br />
-										Project</a></h2>
-									</header>
-									<a href="ExcelProject.html" class="image fit"><img src="images/Excel.png" alt="" style="max-width:75%;"/></a>
-									<p>Excel projects are a crucial element of a data analyst's portfolio, highlighting their proficiency in organizing and analyzing data using Excel's advanced features to generate impactful visualizations and reports.</p>
-									<ul class="actions special">
-										<li><a href="ExcelProject.html" class="button">All Projects</a></li>
-									</ul>
-								</article>
-
-
-								<article>
-									<header>
-									<!--	<span class="date">Sep 01, 2021</span> -->
-										<h2><a href="#">Python<br />
-										Project</a></h2>
-									</header>
-									<a href="PythonProject.html" class="image fit"><img src="images/Python.webp" alt="" style="max-width:100%;"/></a>
-									<p>
-										Python projects are a fundamental component of a data analyst's portfolio, demonstrating their proficiency in using Python to extract, manipulate, and analyze data to generate valuable insights and solutions for business problems.</p>
-									<ul class="actions special">
-										<li><a href="PythonProject.html" class="button">All Projects</a></li>
-									</ul>
-								</article>
-
-								<article>
-									<header>
-									<!--	<span class="date">Sep 01, 2021</span> -->
-										<h2><a href="#">Tableau<br />
-										Project</a></h2>
-									</header>
-									<a href="TableauProject.html" class="image fit"><img src="images/Tableau.webp" alt="" style="max-width:100%;"/></a>
-									<p>Tableau projects are a vital aspect of a data analyst's portfolio, showcasing their ability to utilize Tableau's advanced features to create interactive visualizations and dashboards that effectively communicate complex data insights to stakeholders.</p>
-									<ul class="actions special">
-										<li><a href="TableauProject.html" class="button">All Projects</a></li>
-									</ul>
-								</article>
-
-
-								<article>
-									<header>
-									<!--	<span class="date">Sep 01, 2021</span> -->
-										<h2><a href="#">Web<br />
-										Scraping</a></h2>
-									</header>
-									<a href="TableauProject.html" class="image fit"><img src="images/Web-Scraping.jpg" alt="" style="max-width:100%;"/></a>
-									<p>Web scraping projects, employing advanced techniques and tools such as Python, BeautifulSoup, and Selenium to efficiently extract, analyze, and transform data from diverse websites, providing valuable insights and automation solutions.</p>
-									<ul class="actions special">
-										<li><a href="WebScraping.html" class="button">All Projects</a></li>
-									</ul>
-								</article>
-
-
-								
-									<article>
-										<header>
-										<!--	<span class="date">January 01, 2023</span> -->
-											<h2><a href="#">Microsoft Power <br />
-											Automate Project</a></h2>
-										</header>
-										<!-- <a href="#" class="image fit"><img src="images/SQL.png" alt="" /></a>  -->
-										<a href="PowerAutomate.html" class="image fit"><img src="images/Power_Automate.jpeg" alt="" style="max-width:75%;"/></a>
-										<p>I have incorporated multiple Microsoft Power Automate projects, highlighting my capability to streamline business processes and automate workflows, resulting in increased operational efficiency and productivity for organizations.</p>
-										<ul class="actions special">
-											<li><a href="PowerAutomate.html" class="button">All Projects</a></li>
-										</ul>
-									</article>
-
-
-
-								<article>
-									<header>
-									<!--	<span class="date">Sep 01, 2021</span> -->
-										<h2><a href="#">PowerBi<br />
-										Project</a></h2>
-									</header>
-									<a href="PowerBIProject.html" class="image fit"><img src="images/PowerBI.jfif" alt="" style="max-width:100%;"/></a>
-									<p>Power BI projects are a crucial aspect of a data analyst's portfolio, demonstrating their ability to create interactive and insightful visualizations and reports using Power BI's advanced features to help organizations make data-driven decisions.</p>
-									<ul class="actions special">
-										<li><a href="PowerBIProject.html" class="button">All Projects</a></li>
-									</ul>
-								</article>
-
-
-								<article>
-									<header>
-									<!--	<span class="date">Sep 01, 2021</span> -->
-										<h2><a href="#">Looker Studio<br />
-										Project</a></h2>
-									</header>
-									<a href="LookerStudioProject.html" class="image fit"><img src="images/Looker_Studio.jfif" alt="" style="max-width:100%;"/></a>
-									<p>Looker Studio projects are an essential component of a data analyst's portfolio, showcasing their ability to design and build complex data models, explore and analyze data, and create powerful and interactive dashboards that enable businesses to make informed decisions based on data insights.</p>
-									<ul class="actions special">
-										<li><a href="LookerStudioProject.html" class="button">All Projects</a></li>
-									</ul>
-								</article>
-
-
-								<article>
-									<header>
-									<!--	<span class="date">Sep 01, 2021</span> -->
-										<h2><a href="#">Macro<br />
-										Project</a></h2>
-									</header>
-									<a href="MacroProject.html" class="image fit"><img src="images/Macros.jpg" alt="" style="max-width:100%;"/></a>
-									<p>The macro-enabled Excel project streamlines data analytics processes by automating repetitive tasks and allowing for efficient analysis of large datasets.</p>
-									<ul class="actions special">
-										<li><a href="MacroProject.html" class="button">All Projects</a></li>
-									</ul>
-								</article>
-
-								<article>
-									<header>
-									<!--	<span class="date">February 01, 2023</span>  -->
-										<h2><a href="#">Insights on Mobile Phones<br />
-										with Tableau</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/Sentimental_Analysis_Tableau.png" alt="" /></a>
-									<p>Using Tableau to analyze mobile phone data can provide valuable insights into consumer behavior, preferences, and trends.</p>
-									<ul class="actions special">
-										<li><a href="Sentimental Analysis on Mobile Phones.html" class="button">Full Brief</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-									<!--	<span class="date">February 01, 2023</span> -->
-										<h2><a href="#">Sentimental Analysis<br />
-										on Mobile Phones</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/Sentimental_Analysis_Tableau2.png" alt="" /></a>
-									<p>Performing sentimental analysis on mobile phones can help identify and understand the emotions and opinions of users.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Pranay62/SentimentalAnalysis_Project.git" class="button">View Project</a></li>
-									</ul>
-								</article>
-								
-				
-
-				
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-					<!--	<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div> -->
-								<!--	<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form> 
-						</section> -->
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Nagpur,India</p>
-							</section>
-
-							<section>
-								<h3>Phone Number</h3>
-								<p><a onclick="copyToClipboard('+917020561996')">+91 7020561996</a></p>
-							</section>
-							
-							<script>
-							function copyToClipboard(text) {
-							  var input = document.createElement('input');
-							  input.setAttribute('value', text);
-							  document.body.appendChild(input);
-							  input.select();
-							  document.execCommand('copy');
-							  document.body.removeChild(input);
-							  var alertBox = document.createElement('div');
-							  alertBox.innerHTML = 'Phone number copied to clipboard!';
-							  alertBox.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px; background-color: #fff; border: 1px solid #000; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); z-index: 9999;';
-							  document.body.appendChild(alertBox);
-							  setTimeout(function() {
-								alertBox.parentNode.removeChild(alertBox);
-							  }, 1000);
-							}
-							</script>
-							
-							
-						
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto:prngrd8@gmail.com">prngrd8@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://twitter.com/girde_pranay" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<!--<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-									<li><a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-								<!--	<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li> -->
-								</ul>
-							</section>
-						</section>
-					</footer> 
-
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
