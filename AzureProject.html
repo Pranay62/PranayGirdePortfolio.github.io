@@ -1,454 +1,100 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>PRANAY GIRDE</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud & Azure Architecture | Pranay Girde</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{bg:'#09090b',card:'#18181b',border:'#27272a',accent:'#38bdf8'}}}}</script>
+    <style>body{background-color:#09090b}.glass{background:rgba(24,24,27,0.6);backdrop-filter:blur(12px);border:1px solid #27272a}.project-card{transition:all .3s ease}.project-card:hover{transform:translateY(-5px);border-color:#38bdf8;box-shadow:0 0 30px rgba(56,189,248,0.1)}</style>
+</head>
+<body class="text-zinc-300 font-sans antialiased">
+    <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center max-w-7xl mx-auto mt-4 rounded-xl">
+        <a href="index.html" class="text-xl font-bold text-white tracking-tight">PG<span class="text-accent">.</span></a>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-zinc-400">
+            <a href="index.html#work" class="hover:text-white transition">Case Studies</a>
+            <a href="projects.html" class="hover:text-white transition">All Projects</a>
+            <a href="MyProfile.html" class="hover:text-white transition">Experience</a>
+        </div>
+        <a href="Resume_PRANAY_2026.pdf" class="bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-zinc-200 transition">Resume</a>
+    </nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <header class="pt-32 pb-12 text-center px-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-sky-500/10 text-sky-400 text-xs font-bold uppercase tracking-wider mb-4"><i class="fas fa-cloud mr-2"></i> Cloud Data Engineering</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Azure & <span class="text-accent">Cloud Architecture</span></h1>
+        <p class="max-w-2xl mx-auto text-zinc-400">Enterprise-grade ELT pipelines, serverless microservices, and distributed data architectures built for scale.</p>
+    </header>
 
-				<!-- Header -->
-					<header id="header">
-					<!--	<a href="index.html" class="logo">Massively</a> -->
-					</header>
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            
+            <!-- Albertsons Data Mart -->
+            <div class="project-card glass rounded-2xl overflow-hidden border border-border flex flex-col">
+                <div class="h-48 w-full bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#18181b] to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white flex items-center gap-2"><i class="fas fa-database text-sky-400"></i> Enterprise Data Mart</div>
+                    <div class="absolute top-4 right-4 bg-sky-500 text-black px-3 py-1 rounded-full text-xs font-bold flex items-center gap-2"><i class="fas fa-star"></i> Flagship</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-white mb-2">Albertsons Promo Data Mart</h3>
+                    <p class="text-zinc-400 text-sm flex-grow mb-4">Architected a centralized Promo Data Mart for a major U.S. retailer. Designed automated PySpark pipelines in Azure Databricks that boosted promotion insights accessibility by 80% and enabled real-time, data-driven marketing strategies nationwide.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Azure Databricks</span>
+                        <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">PySpark</span>
+                        <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Data Factory</span>
+                    </div>
+                    <span class="text-zinc-500 text-xs italic mt-auto"><i class="fas fa-lock mr-1"></i> Proprietary Enterprise Architecture</span>
+                </div>
+            </div>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">My Portfolio</a></li>
-						<!--	<li><a href="generic.html">Generic Page</a></li> -->
-						<!--	<li class="active"><a href="elements.html">Elements Reference</a></li> -->
-						</ul>
-						<ul class="icons">
-							<li><a href="https://twitter.com/girde_pranay" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<!--	<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-						<!--	<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
-							<li><a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="icon brands fa-linkedin"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+            <!-- Symphony Retail AI -->
+            <div class="project-card glass rounded-2xl overflow-hidden border border-border flex flex-col">
+                <div class="h-48 w-full bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#18181b] to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white flex items-center gap-2"><i class="fas fa-microchip text-purple-400"></i> Serverless Microservices</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-white mb-2">Symphony Retail AI (CPH)</h3>
+                    <p class="text-zinc-400 text-sm flex-grow mb-4">Engineered a zero-disruption Custom Product Hierarchy solution using Azure Functions and Snowflake. Developed an additive microservice architecture that accelerated analytics delivery by 40% and reduced query latency by 65% via intelligent caching.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Azure Functions</span>
+                        <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Snowflake</span>
+                        <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Microservices</span>
+                    </div>
+                    <span class="text-zinc-500 text-xs italic mt-auto"><i class="fas fa-lock mr-1"></i> Proprietary Enterprise Architecture</span>
+                </div>
+            </div>
 
-				<!-- Main -->
-					<div id="main">
+            <!-- Airflow ETL -->
+            <div class="project-card glass rounded-2xl overflow-hidden border border-border flex flex-col md:col-span-2">
+                <div class="h-48 w-full bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1518430800805-63a5645762b6?auto=format&fit=crop&w=1200&q=80');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#18181b] to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white flex items-center gap-2"><i class="fas fa-wind text-emerald-400"></i> Orchestration</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold text-white mb-2">Airflow-Powered ELT Pipelines</h3>
+                    <p class="text-zinc-400 text-sm flex-grow mb-4">Designed and deployed robust, distributed ETL pipelines using Apache Airflow for freelance and enterprise clients. Orchestrated complex data workflows across AWS (S3, EMR) and GCP, improving client operational efficiency and data reliability by 30%.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Apache Airflow</span>
+                        <span class="px-3 py-1 bg-zinc-800 rounded text-xs text-zinc-300">AWS / GCP</span>
+                        <span class="px-3 py-1 bg-zinc-800 rounded text-xs text-zinc-300">Python</span>
+                        <span class="px-3 py-1 bg-zinc-800 rounded text-xs text-zinc-300">dbt</span>
+                    </div>
+                    <a href="https://github.com/Pranay62" target="_blank" class="text-accent text-sm font-semibold hover:underline mt-auto">View Pipeline Scripts on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
 
-						<!-- Post -->
-							<section class="post">
-								<header class="major">
-									<h1>Azure Projects<br />
-									</h1>
-								</header>
-					<!--			<h2 style="text-align:center;"><a href="#">Bikes Sales<br />
-									Report</a></h2>
-									
-								<a href="https://github.com/Pranay62/Bike_Sale_Excel_Project.git" class="image fit"><img src="images/BikeSales.jfif"/></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/Pranay62/Bike_Sale_Excel_Project.git" class="button">View Project</a></li>
-								</ul><br /><br /><br /><br /><br /><br />
+        </div>
+    </section>
 
-								<h2 style="text-align:center;"><a href="#">Store Sales<br />
-									Report</a></h2>
-									
-								<a href="https://github.com/Pranay62/Store_Data_Analysis_Excel.git" class="image fit"><img src="images/Store_Data.jfif"/></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/Pranay62/Store_Data_Analysis_Excel.git" class="button">View Project</a></li>
-								</ul><br /><br /><br /><br /><br /><br /> -->
-								
-								<h2 style="text-align:center;"><a href="#">AND<br />
-									MANY MORE TO COME !!!</a></h2>
-
-
-
-
-
-						<!--		<h2 style="text-align:center;"><a href="#">Sample<br />
-									2</a></h2>
-									
-								<a href="#" class="image fit"><img src="#"/></a>
-								<ul class="actions special">
-									<li><a href="#" class="button">View Project</a></li>
-								</ul><br /><br /><br /><br /><br /> -->
-								</ul><br /><br /><br /><br /><br />
-
-
-								
-								<!--	<header>
-										<h3>Heading with a Subtitle</h3>
-										<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-									</header>
-									<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-									<header>
-										<h4>Heading with a Subtitle</h4>
-										<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-									</header>
-									<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-
-									<hr /> -->
-
-								<!-- Lists -->
-								<!--	<h2>Lists</h2>
-									<div class="row">
-										<div class="col-6 col-12-small">
-
-											<h3>Unordered</h3>
-											<ul>
-												<li>Dolor pulvinar etiam.</li>
-												<li>Sagittis lorem eleifend.</li>
-												<li>Felis feugiat dolore viverra.</li>
-												<li>Dolor pulvinar etiam.</li>
-											</ul>
-
-											<h3>Alternate</h3>
-											<ul class="alt">
-												<li>Dolor pulvinar etiam etiam.</li>
-												<li>Sagittis adipiscing eleifend.</li>
-												<li>Felis enim dolore viverra.</li>
-												<li>Dolor pulvinar etiam etiam.</li>
-											</ul>
-
-										</div>
-										<div class="col-6 col-12-small">
-
-											<h3>Ordered</h3>
-											<ol>
-												<li>Dolor pulvinar etiam.</li>
-												<li>Etiam vel felis at viverra.</li>
-												<li>Felis enim feugiat magna.</li>
-												<li>Etiam vel felis nullam.</li>
-												<li>Felis enim et tempus.</li>
-											</ol>
-
-											<h3>Icons</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-												<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-											</ul>
-											<ul class="icons alt">
-												<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands alt fa-github"><span class="label">Github</span></a></li>
-												<li><a href="#" class="icon brands alt fa-dribbble"><span class="label">Dribbble</span></a></li>
-											</ul>
-
-										</div>
-									</div>
-									<h3>Definition</h3>
-									<dl>
-										<dt>Item 1</dt>
-										<dd>
-											<p>Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										</dd>
-										<dt>Item 2</dt>
-										<dd>
-											<p>Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										</dd>
-										<dt>Item 3</dt>
-										<dd>
-											<p>Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										</dd>
-									</dl>
-
-									<h3>Actions</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions small">
-										<li><a href="#" class="button primary small">Small</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<div class="row">
-										<div class="col-6 col-12-small">
-											<ul class="actions stacked">
-												<li><a href="#" class="button primary">Default</a></li>
-												<li><a href="#" class="button">Default</a></li>
-											</ul>
-										</div>
-										<div class="col-6 col-12-small">
-											<ul class="actions stacked">
-												<li><a href="#" class="button primary small">Small</a></li>
-												<li><a href="#" class="button small">Small</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-6 col-12-small">
-											<ul class="actions stacked">
-												<li><a href="#" class="button primary fit">Default</a></li>
-												<li><a href="#" class="button fit">Default</a></li>
-											</ul>
-										</div>
-										<div class="col-6 col-12-small">
-											<ul class="actions stacked">
-												<li><a href="#" class="button primary small fit">Small</a></li>
-												<li><a href="#" class="button small fit">Small</a></li>
-											</ul>
-										</div>
-									</div>
-
-									<hr />  -->
-
-								<!-- Blockquote -->
-								<!--	<h2>Blockquote</h2>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis.</blockquote>
-
-									<hr /> -->
-
-								<!-- Table -->
-								<!--	<h2>Table</h2>
-
-									<h3>Default</h3>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item 1</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item 2</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item 3</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item 4</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item 5</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h3>Alternate</h3>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item 1</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item 2</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item 3</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item 4</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item 5</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<hr /> -->
-
-								<!-- Buttons -->
-								<!--	<h2>Buttons</h2>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary large">Large</a></li>
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions fit">
-										<li><a href="#" class="button primary fit">Fit</a></li>
-										<li><a href="#" class="button fit">Fit</a></li>
-									</ul>
-									<ul class="actions fit small">
-										<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-										<li><a href="#" class="button fit small">Fit + Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-search">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Primary</span></li>
-										<li><span class="button disabled">Default</span></li>
-									</ul>
-
-									<hr /> -->
-
-								
-								
-
-								<!-- Box -->
-								<!--	<h2>Box</h2>
-									<div class="box">
-										<p>Felis sagittis eget tempus primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Magna sed etiam ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus lorem ipsum dolor sit amet nullam. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis volutpat lorem ipsum dolor.</p>
-									</div>
-
-									<hr /> -->
-
-								<!-- Preformatted Code -->
-								<!--	<h2>Preformatted</h2>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';
-</code></pre>
-
-							</section>
-
-					</div> -->
-
-				<!-- Footer -->
-			<!--		<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section> -->
-
-
-
-
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Nagpur,India</p>
-							</section>
-							
-							<section>
-								<h3>Phone Number</h3>
-								<p><a onclick="copyToClipboard('+917020561996')">+91 7020561996</a></p>
-							</section>
-							
-							<script>
-							function copyToClipboard(text) {
-							  var input = document.createElement('input');
-							  input.setAttribute('value', text);
-							  document.body.appendChild(input);
-							  input.select();
-							  document.execCommand('copy');
-							  document.body.removeChild(input);
-							  var alertBox = document.createElement('div');
-							  alertBox.innerHTML = 'Phone number copied to clipboard!';
-							  alertBox.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px; background-color: #fff; border: 1px solid #000; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); z-index: 9999;';
-							  document.body.appendChild(alertBox);
-							  setTimeout(function() {
-								alertBox.parentNode.removeChild(alertBox);
-							  }, 1000);
-							}
-							</script>
-
-							<section>
-									<h3>Email</h3>
-									<p><a href="mailto:prngrd8@gmail.com">prngrd8@gmail.com</a></p>
-							</section>
-
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://twitter.com/girde_pranay" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<!--<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-									<li><a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-								<!--	<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li> -->
-								</ul>
-							</section>
-						</section>
-					</footer> 
-
-				<!-- Copyright -->
-				<!--	<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>  -->
-
-			</div>  
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <footer class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center border-t border-border text-zinc-500 text-sm">
+        <p>&copy; 2026 Pranay Girde.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="mailto:prngrd8@gmail.com" class="hover:text-white transition">prngrd8@gmail.com</a>
+            <a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="hover:text-white transition">LinkedIn</a>
+        </div>
+    </footer>
+</body>
 </html>
