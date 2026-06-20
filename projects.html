@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Hub | Pranay Girde</title>
+    <meta name="description" content="A comprehensive archive of Pranay Girde's data engineering, analytics, and automation projects.">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <script>
         tailwind.config = {
             theme: {
@@ -16,164 +20,328 @@
             }
         }
     </script>
+
     <style>
+        html { scroll-behavior: smooth; }
         body { background-color: #09090b; }
         .glass { background: rgba(24, 24, 27, 0.6); backdrop-filter: blur(12px); border: 1px solid #27272a; }
-        .project-card { transition: all 0.3s ease; }
-        .project-card:hover { transform: translateY(-5px); border-color: #38bdf8; box-shadow: 0 0 30px rgba(56, 189, 248, 0.1); }
+
+        /* Card hover */
+        .project-card {
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #38bdf8;
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.12);
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.animate-in { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.08s; }
+        .reveal-delay-2 { transition-delay: 0.16s; }
+        .reveal-delay-3 { transition-delay: 0.24s; }
+        .reveal-delay-4 { transition-delay: 0.32s; }
+        .reveal-delay-5 { transition-delay: 0.40s; }
+
+        /* Filter active pill */
+        .filter-btn { transition: background-color 0.2s ease, color 0.2s ease; }
+        .filter-btn.active { background-color: #38bdf8; color: #000; }
+
+        /* Card hide/show for filter */
+        .project-card.hidden-card {
+            opacity: 0;
+            transform: scale(0.94);
+            pointer-events: none;
+        }
     </style>
 </head>
+
 <body class="text-zinc-300 font-sans antialiased">
 
-    <!-- NAVBAR -->
-    <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center max-w-7xl mx-auto mt-4 rounded-xl">
+<!-- ═══════════════════════════════════════════════════════
+     MOBILE MENU OVERLAY
+════════════════════════════════════════════════════════ -->
+<div id="mobile-menu"
+     class="fixed inset-0 z-50 bg-[#09090b]/95 backdrop-blur-md hidden flex-col items-center justify-center gap-10">
+    <button id="close-menu" class="absolute top-6 right-6 text-zinc-400 hover:text-white transition">
+        <i class="fas fa-times text-2xl"></i>
+    </button>
+    <a href="index.html#work" class="text-2xl font-bold text-white hover:text-accent transition">Case Studies</a>
+    <a href="projects.html"   class="text-2xl font-bold text-accent transition">All Projects</a>
+    <a href="innovation.html" class="text-2xl font-bold text-white hover:text-accent transition">Innovation Lab</a>
+    <a href="MyProfile.html"  class="text-2xl font-bold text-white hover:text-accent transition">Experience</a>
+    <a href="https://drive.google.com/file/d/197AjpqHGHhnQ6HDJTSLXi3GB3IRxWsUW/view?usp=sharing"
+       target="_blank"
+       class="mt-4 bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-zinc-200 transition">
+        Resume ↗
+    </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════════ -->
+<div class="fixed w-full z-40 px-4 pt-4">
+    <nav class="glass max-w-7xl mx-auto px-6 py-4 flex justify-between items-center rounded-xl">
         <a href="index.html" class="text-xl font-bold text-white tracking-tight">PG<span class="text-accent">.</span></a>
+
         <div class="hidden md:flex space-x-8 text-sm font-medium text-zinc-400">
             <a href="index.html#work" class="hover:text-white transition">Case Studies</a>
-            <a href="projects.html" class="hover:text-white transition">All Projects</a>
+            <a href="projects.html"   class="text-white border-b border-accent pb-0.5">All Projects</a>
             <a href="innovation.html" class="hover:text-white transition">Innovation Lab</a>
-            <a href="MyProfile.html" class="hover:text-white transition">Experience</a>
+            <a href="MyProfile.html"  class="hover:text-white transition">Experience</a>
         </div>
-        <a href="https://drive.google.com/file/d/197AjpqHGHhnQ6HDJTSLXi3GB3IRxWsUW/view?usp=sharing" target="_blank" class="bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-zinc-200 transition">Resume</a>
-        <!-- https://drive.google.com/file/d/197AjpqHGHhnQ6HDJTSLXi3GB3IRxWsUW/view?usp=sharing -->
+
+        <div class="flex items-center gap-3">
+            <a href="https://drive.google.com/file/d/197AjpqHGHhnQ6HDJTSLXi3GB3IRxWsUW/view?usp=sharing"
+               target="_blank"
+               class="bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-zinc-200 transition">
+                Resume
+            </a>
+            <button id="menu-btn" class="md:hidden text-zinc-400 hover:text-white transition p-1">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
     </nav>
+</div>
 
-    <!-- HERO & FILTERS -->
-    <header class="pt-32 pb-12 text-center px-6">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">The <span class="text-accent">Project Hub</span></h1>
-        <p class="max-w-2xl mx-auto text-zinc-400 mb-10">A comprehensive archive of my data engineering, analytics, and automation work.</p>
-        
-        <div class="flex flex-wrap justify-center gap-3">
-            <button data-filter="all" class="filter-btn bg-accent text-black px-4 py-2 rounded-full text-sm font-semibold transition">All Projects</button>
-            <button data-filter="data-eng" class="filter-btn bg-zinc-800 text-zinc-300 px-4 py-2 rounded-full text-sm font-semibold transition hover:bg-zinc-700">Cloud & Data Eng</button>
-            <button data-filter="bi" class="filter-btn bg-zinc-800 text-zinc-300 px-4 py-2 rounded-full text-sm font-semibold transition hover:bg-zinc-700">BI & Dashboards</button>
-            <button data-filter="python" class="filter-btn bg-zinc-800 text-zinc-300 px-4 py-2 rounded-full text-sm font-semibold transition hover:bg-zinc-700">Python & ML</button>
-            <button data-filter="sql" class="filter-btn bg-zinc-800 text-zinc-300 px-4 py-2 rounded-full text-sm font-semibold transition hover:bg-zinc-700">SQL</button>
-            <button data-filter="auto" class="filter-btn bg-zinc-800 text-zinc-300 px-4 py-2 rounded-full text-sm font-semibold transition hover:bg-zinc-700">Automation</button>
+<!-- ═══════════════════════════════════════════════════════
+     HERO & FILTERS
+════════════════════════════════════════════════════════ -->
+<header class="pt-32 pb-12 text-center px-6 relative">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-sky-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 relative z-10">
+        The <span class="text-accent">Project Hub</span>
+    </h1>
+    <p class="max-w-2xl mx-auto text-zinc-400 mb-10 relative z-10">
+        A comprehensive archive of my data engineering, analytics, and automation work.
+    </p>
+
+    <!-- Filter pills -->
+    <div class="flex flex-wrap justify-center gap-3 relative z-10">
+        <button data-filter="all"      class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold">All Projects</button>
+        <button data-filter="data-eng" class="filter-btn bg-zinc-800 text-zinc-300 px-5 py-2 rounded-full text-sm font-semibold hover:bg-zinc-700">Cloud & Data Eng</button>
+        <button data-filter="bi"       class="filter-btn bg-zinc-800 text-zinc-300 px-5 py-2 rounded-full text-sm font-semibold hover:bg-zinc-700">BI & Dashboards</button>
+        <button data-filter="python"   class="filter-btn bg-zinc-800 text-zinc-300 px-5 py-2 rounded-full text-sm font-semibold hover:bg-zinc-700">Python & ML</button>
+        <button data-filter="sql"      class="filter-btn bg-zinc-800 text-zinc-300 px-5 py-2 rounded-full text-sm font-semibold hover:bg-zinc-700">SQL</button>
+        <button data-filter="auto"     class="filter-btn bg-zinc-800 text-zinc-300 px-5 py-2 rounded-full text-sm font-semibold hover:bg-zinc-700">Automation</button>
+    </div>
+
+    <!-- Project count -->
+    <p id="project-count" class="text-zinc-500 text-sm mt-5 relative z-10">Showing 9 projects</p>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     PROJECT GRID
+════════════════════════════════════════════════════════ -->
+<section class="max-w-7xl mx-auto px-6 pb-24">
+    <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <div class="project-card glass rounded-2xl p-6 border border-[#27272a] flex flex-col reveal"
+             data-category="data-eng">
+            <span class="text-xs font-semibold text-sky-500 uppercase tracking-wider mb-2">Azure / PySpark</span>
+            <h3 class="text-xl font-bold text-white mb-3">Albertsons Promo Data Mart</h3>
+            <p class="text-zinc-400 text-sm flex-grow mb-4">Architected centralized data pipelines using PySpark and Azure Databricks, boosting data accessibility by 80%.</p>
+            <a href="MyProfile.html#nitor"
+               class="text-accent text-sm font-semibold hover:underline flex items-center gap-1">
+                View Experience <i class="fas fa-arrow-right text-xs"></i>
+            </a>
         </div>
-    </header>
 
-    <!-- PROJECT GRID -->
-    <section class="max-w-7xl mx-auto px-6 pb-24">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <!-- Card 1 -->
-            <div class="project-card glass rounded-2xl p-6 border border-border flex flex-col" data-category="data-eng">
-                <span class="text-xs font-semibold text-sky-500 uppercase tracking-wider mb-2">Azure / PySpark</span>
-                <h3 class="text-xl font-bold text-white mb-3">Albertsons Promo Data Mart</h3>
-                <p class="text-zinc-400 text-sm flex-grow mb-4">Architected centralized data pipelines using PySpark and Azure Databricks, boosting data accessibility by 80%.</p>
-                <a href="https://github.com/Pranay62" class="text-accent text-sm font-semibold hover:underline">View Architecture →</a>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="project-card glass rounded-2xl p-6 border border-border flex flex-col" data-category="python data-eng">
-                <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2">GenAI / RAG</span>
-                <h3 class="text-xl font-bold text-white mb-3">Financial Workflow Automation</h3>
-                <p class="text-zinc-400 text-sm flex-grow mb-4">Engineered a modular RAG system using LlamaIndex and Qdrant, reducing manual retrieval time by 65%.</p>
-                <a href="https://github.com/Pranay62" class="text-accent text-sm font-semibold hover:underline">View Case Study →</a>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="project-card glass rounded-2xl p-6 border border-border flex flex-col" data-category="auto">
-                <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-2">RPA</span>
-                <h3 class="text-xl font-bold text-white mb-3">RBI Bank Creation Automation</h3>
-                <p class="text-zinc-400 text-sm flex-grow mb-4">Deployed Automation Anywhere bots to streamline bank creation, reducing turnaround from days to 3 hours.</p>
-                <a href="https://github.com/Pranay62" class="text-accent text-sm font-semibold hover:underline">View Workflow →</a>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="project-card glass rounded-2xl p-6 border border-border flex flex-col" data-category="bi">
-                <span class="text-xs font-semibold text-yellow-500 uppercase tracking-wider mb-2">Power BI</span>
-                <h3 class="text-xl font-bold text-white mb-3">JS Bank & Netflix Dashboards</h3>
-                <p class="text-zinc-400 text-sm flex-grow mb-4">Designed enterprise-grade Power BI ecosystems for banking and entertainment sectors, cutting reporting time by 50%.</p>
-                <a href="https://github.com/Pranay62/JS-BANK-LTD-REPORT.git" class="text-accent text-sm font-semibold hover:underline">View Dashboards →</a>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="project-card glass rounded-2xl p-6 border border-border flex flex-col" data-category="sql">
-                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">SQL / Postgres</span>
-                <h3 class="text-xl font-bold text-white mb-3">Data Cleaning & Exploration</h3>
-                <p class="text-zinc-400 text-sm flex-grow mb-4">Advanced SQL projects including Nashville Housing data cleaning, Netflix dataset wrangling, and Covid data exploration.</p>
-                <a href="https://github.com/Pranay62/Housing_Data_Cleaning.git" class="text-accent text-sm font-semibold hover:underline">View SQL Repo →</a>
-            </div>
-
-            <!-- Card 6 -->
-            <div class="project-card glass rounded-2xl p-6 border border-border flex flex-col" data-category="python">
-                <span class="text-xs font-semibold text-green-500 uppercase tracking-wider mb-2">Python / EDA</span>
-                <h3 class="text-xl font-bold text-white mb-3">Diwali Sales & Movie Correlation</h3>
-                <p class="text-zinc-400 text-sm flex-grow mb-4">Utilized Pandas, NumPy, and Seaborn to perform exploratory data analysis and uncover hidden retail and entertainment trends.</p>
-                <a href="https://github.com/Pranay62/Diwali_Sales_Data_Analysis.git" class="text-accent text-sm font-semibold hover:underline">View Notebooks →</a>
-            </div>
-
-            <!-- Card 7 -->
-            <div class="project-card glass rounded-2xl p-6 border border-border flex flex-col" data-category="python">
-                <span class="text-xs font-semibold text-orange-500 uppercase tracking-wider mb-2">Web Scraping</span>
-                <h3 class="text-xl font-bold text-white mb-3">Automated Web Scrapers</h3>
-                <p class="text-zinc-400 text-sm flex-grow mb-4">Built robust scrapers for BBC, FiveThirtyEight, and Oscar Films using BeautifulSoup, Selenium, and asynchronous Python.</p>
-                <a href="https://github.com/Pranay62/fivethirtyeight_WS.git" class="text-accent text-sm font-semibold hover:underline">View Scrapers →</a>
-            </div>
-
-            <!-- Card 8 -->
-            <div class="project-card glass rounded-2xl p-6 border border-border flex flex-col" data-category="bi python">
-                <span class="text-xs font-semibold text-pink-500 uppercase tracking-wider mb-2">NLP / Tableau</span>
-                <h3 class="text-xl font-bold text-white mb-3">Mobile Sentiment Analysis</h3>
-                <p class="text-zinc-400 text-sm flex-grow mb-4">Analyzed Twitter and Amazon reviews using TextBlob and Naive Bayes, visualizing consumer sentiment in Tableau.</p>
-                <a href="https://github.com/Pranay62/SentimentalAnalysis_Project.git" class="text-accent text-sm font-semibold hover:underline">View Analysis →</a>
-            </div>
-
-            <!-- Card 9 -->
-            <div class="project-card glass rounded-2xl p-6 border border-border flex flex-col" data-category="auto">
-                <span class="text-xs font-semibold text-cyan-500 uppercase tracking-wider mb-2">VBA / Power Automate</span>
-                <h3 class="text-xl font-bold text-white mb-3">E-Commerce & Excel Automation</h3>
-                <p class="text-zinc-400 text-sm flex-grow mb-4">Created VBA macros and Power Automate flows to consolidate reports and automate Whole Foods order processing.</p>
-                <a href="https://github.com/Pranay62" class="text-accent text-sm font-semibold hover:underline">View Automations →</a>
-            </div>
-
+        <!-- Card 2 -->
+        <div class="project-card glass rounded-2xl p-6 border border-[#27272a] flex flex-col reveal reveal-delay-1"
+             data-category="python data-eng">
+            <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2">GenAI / RAG</span>
+            <h3 class="text-xl font-bold text-white mb-3">Financial Workflow Automation</h3>
+            <p class="text-zinc-400 text-sm flex-grow mb-4">Engineered a modular RAG system using LlamaIndex and Qdrant, reducing manual retrieval time by 65%.</p>
+            <a href="innovation.html"
+               class="text-accent text-sm font-semibold hover:underline flex items-center gap-1">
+                View POC <i class="fas fa-arrow-right text-xs"></i>
+            </a>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center border-t border-border text-zinc-500 text-sm">
-        <p>&copy; 2026 Pranay Girde. Crafted for scale.</p>
-        <div class="flex space-x-6 mt-4 md:mt-0">
-            <a href="mailto:prngrd8@gmail.com" class="hover:text-white transition">prngrd8@gmail.com</a>
-            <a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="hover:text-white transition">LinkedIn</a>
-            <a href="https://github.com/Pranay62" class="hover:text-white transition">GitHub</a>
+        <!-- Card 3 -->
+        <div class="project-card glass rounded-2xl p-6 border border-[#27272a] flex flex-col reveal reveal-delay-2"
+             data-category="auto">
+            <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-2">RPA</span>
+            <h3 class="text-xl font-bold text-white mb-3">RBI Bank Creation Automation</h3>
+            <p class="text-zinc-400 text-sm flex-grow mb-4">Deployed Automation Anywhere bots to streamline bank creation, reducing turnaround from days to 3 hours.</p>
+            <span class="text-zinc-600 text-sm italic">Internal project — available for discussion</span>
         </div>
-    </footer>
 
-    <!-- FILTER SCRIPT -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.project-card');
+        <!-- Card 4 -->
+        <div class="project-card glass rounded-2xl p-6 border border-[#27272a] flex flex-col reveal reveal-delay-1"
+             data-category="bi">
+            <span class="text-xs font-semibold text-yellow-500 uppercase tracking-wider mb-2">Power BI</span>
+            <h3 class="text-xl font-bold text-white mb-3">JS Bank & Netflix Dashboards</h3>
+            <p class="text-zinc-400 text-sm flex-grow mb-4">Designed enterprise-grade Power BI ecosystems for banking and entertainment sectors, cutting reporting time by 50%.</p>
+            <a href="https://github.com/Pranay62/JS-BANK-LTD-REPORT" target="_blank"
+               class="text-accent text-sm font-semibold hover:underline flex items-center gap-1">
+                View Dashboards <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
 
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Reset UI
-                    filterBtns.forEach(b => {
-                        b.classList.remove('bg-accent', 'text-black');
-                        b.classList.add('bg-zinc-800', 'text-zinc-300');
-                    });
-                    
-                    // Set Active UI
-                    btn.classList.remove('bg-zinc-800', 'text-zinc-300');
-                    btn.classList.add('bg-accent', 'text-black');
+        <!-- Card 5 -->
+        <div class="project-card glass rounded-2xl p-6 border border-[#27272a] flex flex-col reveal reveal-delay-2"
+             data-category="sql">
+            <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">SQL / Postgres</span>
+            <h3 class="text-xl font-bold text-white mb-3">Data Cleaning & Exploration</h3>
+            <p class="text-zinc-400 text-sm flex-grow mb-4">Advanced SQL projects including Nashville Housing data cleaning, Netflix dataset wrangling, and Covid data exploration.</p>
+            <a href="https://github.com/Pranay62/Housing_Data_Cleaning" target="_blank"
+               class="text-accent text-sm font-semibold hover:underline flex items-center gap-1">
+                View SQL Repo <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
 
-                    const filterValue = btn.getAttribute('data-filter');
+        <!-- Card 6 -->
+        <div class="project-card glass rounded-2xl p-6 border border-[#27272a] flex flex-col reveal reveal-delay-3"
+             data-category="python">
+            <span class="text-xs font-semibold text-green-500 uppercase tracking-wider mb-2">Python / EDA</span>
+            <h3 class="text-xl font-bold text-white mb-3">Diwali Sales & Movie Correlation</h3>
+            <p class="text-zinc-400 text-sm flex-grow mb-4">Utilized Pandas, NumPy, and Seaborn to perform exploratory data analysis and uncover hidden retail and entertainment trends.</p>
+            <a href="https://github.com/Pranay62/Diwali_Sales_Data_Analysis" target="_blank"
+               class="text-accent text-sm font-semibold hover:underline flex items-center gap-1">
+                View Notebooks <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
 
-                    // Filter Logic
-                    projectCards.forEach(card => {
-                        const categories = card.getAttribute('data-category');
-                        if (filterValue === 'all' || categories.includes(filterValue)) {
-                            card.classList.remove('hidden');
-                        } else {
-                            card.classList.add('hidden');
-                        }
-                    });
-                });
-            });
+        <!-- Card 7 -->
+        <div class="project-card glass rounded-2xl p-6 border border-[#27272a] flex flex-col reveal reveal-delay-4"
+             data-category="python">
+            <span class="text-xs font-semibold text-orange-500 uppercase tracking-wider mb-2">Web Scraping</span>
+            <h3 class="text-xl font-bold text-white mb-3">Automated Web Scrapers</h3>
+            <p class="text-zinc-400 text-sm flex-grow mb-4">Built robust scrapers for BBC, FiveThirtyEight, and Oscar Films using BeautifulSoup, Selenium, and asynchronous Python.</p>
+            <a href="https://github.com/Pranay62/fivethirtyeight_WS" target="_blank"
+               class="text-accent text-sm font-semibold hover:underline flex items-center gap-1">
+                View Scrapers <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="project-card glass rounded-2xl p-6 border border-[#27272a] flex flex-col reveal reveal-delay-5"
+             data-category="bi python">
+            <span class="text-xs font-semibold text-pink-500 uppercase tracking-wider mb-2">NLP / Tableau</span>
+            <h3 class="text-xl font-bold text-white mb-3">Mobile Sentiment Analysis</h3>
+            <p class="text-zinc-400 text-sm flex-grow mb-4">Analyzed Twitter and Amazon reviews using TextBlob and Naive Bayes, visualizing consumer sentiment in Tableau.</p>
+            <a href="https://github.com/Pranay62/SentimentalAnalysis_Project" target="_blank"
+               class="text-accent text-sm font-semibold hover:underline flex items-center gap-1">
+                View Analysis <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="project-card glass rounded-2xl p-6 border border-[#27272a] flex flex-col reveal reveal-delay-4"
+             data-category="auto">
+            <span class="text-xs font-semibold text-cyan-500 uppercase tracking-wider mb-2">VBA / Power Automate</span>
+            <h3 class="text-xl font-bold text-white mb-3">E-Commerce & Excel Automation</h3>
+            <p class="text-zinc-400 text-sm flex-grow mb-4">Created VBA macros and Power Automate flows to consolidate reports and automate Whole Foods order processing.</p>
+            <span class="text-zinc-600 text-sm italic">Internal project — available for discussion</span>
+        </div>
+
+    </div>
+
+    <!-- Empty state -->
+    <div id="empty-state" class="hidden text-center py-20 text-zinc-600">
+        <i class="fas fa-filter text-4xl mb-4 block"></i>
+        <p>No projects match this filter.</p>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════ -->
+<footer class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center border-t border-[#27272a] text-zinc-500 text-sm">
+    <p>&copy; 2026 Pranay Girde. Crafted for scale.</p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="mailto:prngrd8@gmail.com"                           class="hover:text-white transition">prngrd8@gmail.com</a>
+        <a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="hover:text-white transition">LinkedIn</a>
+        <a href="https://github.com/Pranay62"                        class="hover:text-white transition">GitHub</a>
+    </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════════════ -->
+<script>
+/* ── Mobile menu ──────────────────────────────────── */
+(function() {
+    const menu     = document.getElementById('mobile-menu');
+    const openBtn  = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-menu');
+    const open  = () => { menu.classList.remove('hidden'); menu.classList.add('flex'); };
+    const close = () => { menu.classList.add('hidden');    menu.classList.remove('flex'); };
+    openBtn.addEventListener('click',  open);
+    closeBtn.addEventListener('click', close);
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+})();
+
+/* ── Scroll reveal ────────────────────────────────── */
+(function() {
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('animate-in'); io.unobserve(e.target); }
         });
-    </script>
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+
+/* ── Filter with animated stagger ────────────────── */
+(function() {
+    const filterBtns  = document.querySelectorAll('.filter-btn');
+    const cards       = document.querySelectorAll('.project-card');
+    const countEl     = document.getElementById('project-count');
+    const emptyState  = document.getElementById('empty-state');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+
+            // Update pill styles
+            filterBtns.forEach(b => {
+                b.classList.remove('active');
+                b.classList.add('bg-zinc-800', 'text-zinc-300');
+            });
+            btn.classList.add('active');
+            btn.classList.remove('bg-zinc-800', 'text-zinc-300');
+
+            let visible = 0;
+
+            cards.forEach((card, idx) => {
+                const cats = card.getAttribute('data-category') || '';
+                const show = filter === 'all' || cats.includes(filter);
+
+                if (show) {
+                    visible++;
+                    card.classList.remove('hidden-card');
+                    card.style.display = 'flex';
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95) translateY(12px)';
+                    // Stagger in
+                    setTimeout(() => {
+                        card.style.transition = 'opacity 0.35s ease, transform 0.35s ease, border-color 0.3s ease, box-shadow 0.3s ease';
+                        card.style.opacity    = '1';
+                        card.style.transform  = 'scale(1) translateY(0)';
+                    }, idx * 55);
+                } else {
+                    card.style.opacity   = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => { card.style.display = 'none'; }, 300);
+                }
+            });
+
+            // Update count + empty state
+            countEl.textContent = `Showing ${visible} project${visible !== 1 ? 's' : ''}`;
+            emptyState.classList.toggle('hidden', visible > 0);
+        });
+    });
+})();
+</script>
+
 </body>
 </html>
