@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pranay Girde | Senior Data Engineer & GenAI Architect</title>
+
+    <!-- SEO & Open Graph -->
+    <meta name="description" content="Pranay Girde — Senior Data Engineer & GenAI Architect. Building scalable ELT pipelines, RAG systems, and cloud-native data platforms.">
+    <meta property="og:title" content="Pranay Girde | Senior Data Engineer & GenAI Architect">
+    <meta property="og:description" content="6+ years building enterprise data pipelines, GenAI workflows, and cloud architectures at Albertsons, TCS & more.">
+    <meta property="og:image" content="https://pranaygirde.github.io/images/og-preview.png">
+    <meta property="og:url" content="https://pranaygirde.github.io">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts & Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
     <script>
         tailwind.config = {
             theme: {
@@ -18,170 +31,474 @@
             }
         }
     </script>
+
     <style>
+        html { scroll-behavior: smooth; }
         body { background-color: #09090b; }
+
+        /* Glass */
         .glass { background: rgba(24, 24, 27, 0.6); backdrop-filter: blur(12px); border: 1px solid #27272a; }
+
+        /* Marquee */
         .marquee-container { overflow: hidden; white-space: nowrap; }
-        .marquee-content { display: inline-block; animation: scroll 30s linear infinite; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .marquee-content { display: inline-block; animation: marquee-scroll 30s linear infinite; }
+        @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* Bento cards */
         .bento-card { transition: all 0.3s ease; }
-        .bento-card:hover { transform: translateY(-5px); border-color: #38bdf8; box-shadow: 0 0 30px rgba(56, 189, 248, 0.1); }
+        .bento-card:hover { transform: translateY(-6px); border-color: #38bdf8; box-shadow: 0 0 40px rgba(56, 189, 248, 0.12); }
+
+        /* Gradient text animation */
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .gradient-animate {
+            background: linear-gradient(135deg, #38bdf8, #6366f1, #38bdf8);
+            background-size: 200% 200%;
+            animation: gradient-shift 4s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Typed cursor blink */
+        .typed-cursor { animation: blink 0.75s step-end infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .reveal.animate-in { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* Cursor glow */
+        #cursor-glow {
+            pointer-events: none;
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(56,189,248,0.07) 0%, transparent 65%);
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        /* Bounce scroll cue */
+        @keyframes bounce-down {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50%       { transform: translateX(-50%) translateY(8px); }
+        }
+        .bounce-down { animation: bounce-down 1.8s ease-in-out infinite; }
+
+        /* Mobile menu */
+        #mobile-menu { transition: opacity 0.25s ease; }
+
+        /* Hover reveal link inside bento */
+        .hover-link {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .group:hover .hover-link { max-height: 40px; }
     </style>
 </head>
+
 <body class="text-zinc-300 font-sans antialiased">
 
-    <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center max-w-7xl mx-auto mt-4 rounded-xl">
+<!-- CURSOR GLOW (desktop only) -->
+<div id="cursor-glow"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     MOBILE MENU OVERLAY
+════════════════════════════════════════════════════════ -->
+<div id="mobile-menu"
+     class="fixed inset-0 z-50 bg-[#09090b]/95 backdrop-blur-md hidden flex-col items-center justify-center gap-10">
+    <button id="close-menu" class="absolute top-6 right-6 text-zinc-400 hover:text-white transition">
+        <i class="fas fa-times text-2xl"></i>
+    </button>
+    <a href="index.html#work"  class="text-2xl font-bold text-white hover:text-accent transition">Case Studies</a>
+    <a href="projects.html"    class="text-2xl font-bold text-white hover:text-accent transition">All Projects</a>
+    <a href="innovation.html"  class="text-2xl font-bold text-white hover:text-accent transition">Innovation Lab</a>
+    <a href="MyProfile.html"   class="text-2xl font-bold text-white hover:text-accent transition">Experience</a>
+    <a href="https://drive.google.com/file/d/197AjpqHGHhnQ6HDJTSLXi3GB3IRxWsUW/view?usp=sharing"
+       target="_blank"
+       class="mt-4 bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-zinc-200 transition">
+        Resume ↗
+    </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVBAR — fixed full-width shell + glass inner container
+════════════════════════════════════════════════════════ -->
+<div class="fixed w-full z-40 px-4 pt-4">
+    <nav class="glass max-w-7xl mx-auto px-6 py-4 flex justify-between items-center rounded-xl">
         <a href="index.html" class="text-xl font-bold text-white tracking-tight">PG<span class="text-accent">.</span></a>
+
         <div class="hidden md:flex space-x-8 text-sm font-medium text-zinc-400">
-            <a href="index.html#work" class="hover:text-white transition">Case Studies</a>
-            <a href="projects.html#project" class="hover:text-white transition">All Projects</a>
-            <a href="innovation.html#innovation" class="hover:text-white transition">Innovation Lab</a>
-            <a href="MyProfile.html#profile" class="hover:text-white transition">Experience</a>
+            <a href="index.html#work"  class="hover:text-white transition">Case Studies</a>
+            <a href="projects.html"    class="hover:text-white transition">All Projects</a>
+            <a href="innovation.html"  class="hover:text-white transition">Innovation Lab</a>
+            <a href="MyProfile.html"   class="hover:text-white transition">Experience</a>
         </div>
-        <a href="https://drive.google.com/file/d/197AjpqHGHhnQ6HDJTSLXi3GB3IRxWsUW/view?usp=sharing" target="_blank" class="bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-zinc-200 transition">Resume</a>
+
+        <div class="flex items-center gap-3">
+            <a href="https://drive.google.com/file/d/197AjpqHGHhnQ6HDJTSLXi3GB3IRxWsUW/view?usp=sharing"
+               target="_blank"
+               class="bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-zinc-200 transition">
+                Resume
+            </a>
+            <button id="menu-btn" class="md:hidden text-zinc-400 hover:text-white transition p-1">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
     </nav>
+</div>
 
-    <!-- HERO SECTION -->
-    <header class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
-        <div class="inline-flex items-center space-x-2 glass px-4 py-1.5 rounded-full text-xs text-zinc-400 mb-8">
-            <!-- <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            <span>Open to Senior Data Engineering & AI Architecture Roles</span> -->
-        </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6">
-            Architecting Data &<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-600">Agentic AI Workflows.</span>
-        </h1>
-        <p class="max-w-2xl text-lg text-zinc-400 mb-10 leading-relaxed">
-            I'm <span class="text-white font-semibold">Pranay Girde</span>. I build scalable ELT pipelines (Snowflake, dbt, Airflow), microservice architectures, and intelligent RAG systems that turn raw data into automated business decisions.
-        </p>
-        <div class="flex space-x-4">
-            <!-- 1. Case Studies (Scrolls down to the Bento Box on the homepage) -->
-            <a href="#work" class="bg-sky-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-sky-400 transition shadow-lg shadow-sky-500/20">View Case Studies</a>
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════ -->
+<header class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 relative overflow-hidden">
 
-            <!-- 2. Projects (Opens the projects.html page) -->
-            <a href="projects.html" class="bg-emerald-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-emerald-400 transition shadow-lg shadow-emerald-500/20">Project Details</a>
+    <!-- Subtle radial background glow -->
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-sky-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
-            <!-- 3. Innovations (Opens the innovation.html page) -->
-            <a href="innovation.html" class="bg-purple-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-400 transition shadow-lg shadow-purple-500/20">Innovations and POC's</a>
-
-            <!-- 4. Experiences (Opens the MyProfile.html page) -->
-            <a href="MyProfile.html" class="bg-amber-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-amber-400 transition shadow-lg shadow-amber-500/20">Experiences</a>
-            <a href="https://github.com/Pranay62" class="glass px-6 py-3 rounded-lg font-semibold text-white hover:bg-zinc-800 transition">GitHub <i class="fab fa-github ml-2"></i></a>
-        </div>
-    </header>
-
-    <!-- MARQUEE -->
-    <div class="py-12 border-y border-border bg-zinc-900/30 marquee-container">
-        <div class="marquee-content text-2xl font-bold text-zinc-700 tracking-widest uppercase">
-            <span class="mx-8">★ 80% Faster Reporting via GenAI</span>
-            <span class="mx-8">★ Zero-Disruption Microservices (Symphony AI)</span>
-            <span class="mx-8">★ Centralized Data Mart for Albertsons</span>
-            <span class="mx-8">★ MS Data Science, Kingston Univ.</span>
-            <span class="mx-8">★ 80% Faster Reporting via GenAI</span>
-            <span class="mx-8">★ Zero-Disruption Microservices (Symphony AI)</span>
-            <span class="mx-8">★ Centralized Data Mart for Albertsons</span>
-            <span class="mx-8">★ MS Data Science, Kingston Univ.</span>
-        </div>
+    <!-- Status badge -->
+    <div class="inline-flex items-center space-x-2 glass px-4 py-1.5 rounded-full text-xs text-zinc-400 mb-8 relative z-10">
+        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+        <span>Open to Senior Data Engineering & AI Architecture Roles</span>
     </div>
 
-    <!-- BENTO BOX CASE STUDIES -->
-    <section id="work" class="max-w-7xl mx-auto px-6 py-24">
-        <h2 class="text-3xl font-bold text-white mb-12">Featured <span class="text-accent">Case Studies</span></h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
-            <div class="bento-card glass rounded-2xl p-8 md:col-span-2 flex flex-col justify-between border border-border relative overflow-hidden group">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-accent/20 transition-all"></div>
-                <div class="relative z-10">
-                    <span class="text-xs font-semibold text-accent uppercase tracking-wider">GenAI / RAG Pipeline</span>
-                    <h3 class="text-2xl font-bold text-white mt-2 mb-4">Intelligent Financial Workflow Automation</h3>
-                    <p class="text-zinc-400 max-w-md">Engineered a modular RAG system using LlamaIndex and Qdrant, automating quarterly financial report generation and reducing manual retrieval time by 65%.</p>
-                </div>
-                <div class="flex space-x-2 relative z-10">
+    <!-- Headline with typewriter -->
+    <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 relative z-10 leading-tight">
+        Architecting Data &<br>
+        <span id="typed-text" class="gradient-animate"></span><span class="typed-cursor text-accent">|</span>
+    </h1>
+
+    <!-- Sub-headline -->
+    <p class="max-w-2xl text-lg text-zinc-400 mb-10 leading-relaxed relative z-10">
+        I'm <span class="text-white font-semibold">Pranay Girde</span>. I build scalable ELT pipelines
+        (Snowflake, dbt, Airflow), microservice architectures, and intelligent RAG systems that turn
+        raw data into automated business decisions.
+    </p>
+
+    <!-- CTAs — reduced to 3 -->
+    <div class="flex flex-wrap gap-4 justify-center relative z-10">
+        <a href="#work"
+           class="bg-sky-500 text-black px-7 py-3.5 rounded-lg font-bold hover:bg-sky-400 transition shadow-lg shadow-sky-500/30">
+            View Case Studies
+        </a>
+        <a href="MyProfile.html"
+           class="glass border border-zinc-700 text-white px-7 py-3.5 rounded-lg font-semibold hover:border-accent hover:text-accent transition">
+            My Experience
+        </a>
+        <a href="https://github.com/Pranay62" target="_blank"
+           class="flex items-center gap-2 text-zinc-400 px-5 py-3.5 hover:text-white transition text-sm">
+            <i class="fab fa-github text-lg"></i> GitHub ↗
+        </a>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="bounce-down absolute bottom-8 left-1/2 flex flex-col items-center text-zinc-600 text-[10px] tracking-widest uppercase gap-1">
+        <span>scroll</span>
+        <i class="fas fa-chevron-down text-xs"></i>
+    </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     MARQUEE
+════════════════════════════════════════════════════════ -->
+<div class="py-12 border-y border-[#27272a] bg-zinc-900/30 marquee-container">
+    <div class="marquee-content text-2xl font-bold text-zinc-700 tracking-widest uppercase">
+        <span class="mx-8">★ 80% Faster Reporting via GenAI</span>
+        <span class="mx-8">★ Zero-Disruption Microservices (Symphony AI)</span>
+        <span class="mx-8">★ Centralized Data Mart for Albertsons</span>
+        <span class="mx-8">★ MS Data Science, Kingston Univ.</span>
+        <span class="mx-8">★ 65% Latency Reduction (Snowflake)</span>
+        <span class="mx-8">★ 80% Faster Reporting via GenAI</span>
+        <span class="mx-8">★ Zero-Disruption Microservices (Symphony AI)</span>
+        <span class="mx-8">★ Centralized Data Mart for Albertsons</span>
+        <span class="mx-8">★ MS Data Science, Kingston Univ.</span>
+        <span class="mx-8">★ 65% Latency Reduction (Snowflake)</span>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     BENTO CASE STUDIES
+════════════════════════════════════════════════════════ -->
+<section id="work" class="max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-3xl font-bold text-white mb-12 reveal">
+        Featured <span class="text-accent">Case Studies</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[260px]">
+
+        <!-- Card 1 — wide -->
+        <div class="bento-card glass rounded-2xl p-8 md:col-span-2 flex flex-col justify-between border border-[#27272a] relative overflow-hidden group reveal">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-accent/20 transition-all pointer-events-none"></div>
+            <div class="relative z-10">
+                <span class="text-xs font-semibold text-accent uppercase tracking-wider">GenAI / RAG Pipeline</span>
+                <h3 class="text-2xl font-bold text-white mt-2 mb-3">Intelligent Financial Workflow Automation</h3>
+                <p class="text-zinc-400 max-w-md text-sm leading-relaxed">Engineered a modular RAG system using LlamaIndex and Qdrant, automating quarterly financial report generation and reducing manual retrieval time by 65%.</p>
+            </div>
+            <div class="flex flex-wrap items-end justify-between gap-3 relative z-10">
+                <div class="flex flex-wrap gap-2">
                     <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Python</span>
                     <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">LlamaIndex</span>
                     <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Qdrant</span>
                 </div>
-            </div>
-            <div class="bento-card glass rounded-2xl p-8 flex flex-col justify-between border border-border">
-                <span class="text-xs font-semibold text-sky-500 uppercase tracking-wider">Cloud Data Engineering</span>
-                <h3 class="text-xl font-bold text-white mt-2">Albertsons Promo Data Mart</h3>
-                <p class="text-zinc-400 text-sm mt-2 flex-grow">Architected centralized data pipelines using PySpark and Azure Databricks, boosting data accessibility by 80%.</p>
-                <div class="flex space-x-2 mt-4">
-                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Azure</span>
-                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">PySpark</span>
+                <div class="hover-link">
+                    <a href="innovation.html" class="text-accent text-sm font-semibold flex items-center gap-1 whitespace-nowrap">
+                        View POC <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
                 </div>
             </div>
-            <div class="bento-card glass rounded-2xl p-8 flex flex-col justify-between border border-border">
-                <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Microservices</span>
-                <h3 class="text-xl font-bold text-white mt-2">Symphony Retail AI CPH</h3>
-                <p class="text-zinc-400 text-sm mt-2 flex-grow">Architected zero-disruption Custom Product Hierarchy using Azure Functions & Snowflake. Reduced query latency by 65%.</p>
-                <div class="flex space-x-2 mt-4">
-                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Snowflake</span>
-                    <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Azure</span>
-                </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bento-card glass rounded-2xl p-8 flex flex-col justify-between border border-[#27272a] group reveal reveal-delay-1">
+            <span class="text-xs font-semibold text-sky-500 uppercase tracking-wider">Cloud Data Engineering</span>
+            <h3 class="text-xl font-bold text-white mt-2">Albertsons Promo Data Mart</h3>
+            <p class="text-zinc-400 text-sm mt-2 flex-grow">Architected centralized data pipelines using PySpark and Azure Databricks, boosting data accessibility by 80%.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Azure</span>
+                <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">PySpark</span>
+                <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Databricks</span>
             </div>
-            <div class="bento-card glass rounded-2xl p-8 md:col-span-2 flex flex-col justify-between border border-border">
-                <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Business Intelligence</span>
-                <h3 class="text-2xl font-bold text-white mt-2 mb-4">Interactive Analytics & Dashboards</h3>
-                <p class="text-zinc-400 max-w-md">Designed enterprise-grade Power BI and Tableau ecosystems for retail and banking sectors, cutting reporting time by 50%.</p>
-                <div class="flex space-x-2 mt-4">
+            <div class="hover-link mt-1">
+                <a href="MyProfile.html" class="text-accent text-sm font-semibold flex items-center gap-1">
+                    Full Details <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bento-card glass rounded-2xl p-8 flex flex-col justify-between border border-[#27272a] group reveal reveal-delay-2">
+            <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Microservices</span>
+            <h3 class="text-xl font-bold text-white mt-2">Symphony Retail AI CPH</h3>
+            <p class="text-zinc-400 text-sm mt-2 flex-grow">Architected zero-disruption Custom Product Hierarchy using Azure Functions & Snowflake. Reduced query latency by 65%.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Snowflake</span>
+                <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Azure Functions</span>
+            </div>
+            <div class="hover-link mt-1">
+                <a href="MyProfile.html" class="text-accent text-sm font-semibold flex items-center gap-1">
+                    Full Details <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Card 4 — wide -->
+        <div class="bento-card glass rounded-2xl p-8 md:col-span-2 flex flex-col justify-between border border-[#27272a] group reveal reveal-delay-1">
+            <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Business Intelligence</span>
+            <h3 class="text-2xl font-bold text-white mt-2 mb-3">Interactive Analytics & Dashboards</h3>
+            <p class="text-zinc-400 max-w-md text-sm leading-relaxed">Designed enterprise-grade Power BI and Tableau ecosystems for retail and banking sectors, cutting reporting time by 50%.</p>
+            <div class="flex flex-wrap items-end justify-between gap-3">
+                <div class="flex flex-wrap gap-2 mt-4">
                     <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Power BI</span>
                     <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">Tableau</span>
                     <span class="px-3 py-1 bg-zinc-800 rounded-md text-xs text-zinc-300">dbt</span>
                 </div>
+                <div class="hover-link">
+                    <a href="projects.html" class="text-accent text-sm font-semibold flex items-center gap-1 whitespace-nowrap">
+                        All Projects <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- TECH STACK -->
-    <section id="stack" class="max-w-7xl mx-auto px-6 py-24 border-t border-border">
-        <h2 class="text-3xl font-bold text-white mb-12 text-center">The <span class="text-accent">Stack</span></h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div class="glass p-6 rounded-xl">
-                <h4 class="text-accent font-semibold mb-4 uppercase text-xs tracking-wider">Data Eng & ELT</h4>
-                <ul class="space-y-2 text-zinc-300 text-sm">
-                    <li>Snowflake / dbt</li>
-                    <li>Airflow / Databricks</li>
-                    <li>PySpark / SQL</li>
-                    <li>AWS (EMR, S3)</li>
-                </ul>
-            </div>
-            <div class="glass p-6 rounded-xl">
-                <h4 class="text-purple-400 font-semibold mb-4 uppercase text-xs tracking-wider">GenAI & Agents</h4>
-                <ul class="space-y-2 text-zinc-300 text-sm">
-                    <li>LangChain / LlamaIndex</li>
-                    <li>Qdrant (Vector DB)</li>
-                    <li>Mistral / Ollama</li>
-                    <li>Agentic Workflows</li>
-                </ul>
-            </div>
-            <div class="glass p-6 rounded-xl">
-                <h4 class="text-emerald-400 font-semibold mb-4 uppercase text-xs tracking-wider">BI & Analytics</h4>
-                <ul class="space-y-2 text-zinc-300 text-sm">
-                    <li>Power BI (DAX)</li>
-                    <li>Tableau</li>
-                    <li>Looker Studio</li>
-                    <li>Excel / VBA</li>
-                </ul>
-            </div>
-            <div class="glass p-6 rounded-xl">
-                <h4 class="text-sky-400 font-semibold mb-4 uppercase text-xs tracking-wider">Cloud & DevOps</h4>
-                <ul class="space-y-2 text-zinc-300 text-sm">
-                    <li>Azure Cloud</li>
-                    <li>Azure Functions</li>
-                    <li>Git / CI/CD</li>
-                    <li>Unix / Bash</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer id="contact" class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center border-t border-border text-zinc-500 text-sm">
-        <p>&copy; 2026 Pranay Girde. Crafted for scale.</p>
-        <div class="flex space-x-6 mt-4 md:mt-0">
-            <a href="mailto:prngrd8@gmail.com" class="hover:text-white transition">prngrd8@gmail.com</a>
-            <a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="hover:text-white transition">LinkedIn</a>
-            <a href="https://github.com/Pranay62" class="hover:text-white transition">GitHub</a>
+<!-- ═══════════════════════════════════════════════════════
+     TECH STACK
+════════════════════════════════════════════════════════ -->
+<section id="stack" class="max-w-7xl mx-auto px-6 py-24 border-t border-[#27272a]">
+    <h2 class="text-3xl font-bold text-white mb-12 text-center reveal">
+        The <span class="text-accent">Stack</span>
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+
+        <!-- Data Eng -->
+        <div class="glass p-6 rounded-xl reveal">
+            <h4 class="text-accent font-semibold mb-5 uppercase text-xs tracking-wider">Data Eng & ELT</h4>
+            <ul class="space-y-3 text-zinc-300 text-sm">
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fas fa-snowflake text-sky-300"></i> Snowflake / dbt
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fas fa-wind text-sky-400"></i> Airflow / Databricks
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fas fa-bolt text-orange-400"></i> PySpark / SQL
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <i class="devicon-amazonwebservices-plain text-yellow-400 text-base"></i> AWS (EMR, S3)
+                </li>
+            </ul>
         </div>
-    </footer>
+
+        <!-- GenAI -->
+        <div class="glass p-6 rounded-xl reveal reveal-delay-1">
+            <h4 class="text-purple-400 font-semibold mb-5 uppercase text-xs tracking-wider">GenAI & Agents</h4>
+            <ul class="space-y-3 text-zinc-300 text-sm">
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fas fa-link text-purple-400"></i> LangChain / LlamaIndex
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fas fa-vector-square text-violet-400"></i> Qdrant (Vector DB)
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fas fa-brain text-pink-400"></i> Mistral / Ollama
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fas fa-robot text-emerald-400"></i> Agentic Workflows
+                </li>
+            </ul>
+        </div>
+
+        <!-- BI -->
+        <div class="glass p-6 rounded-xl reveal reveal-delay-2">
+            <h4 class="text-emerald-400 font-semibold mb-5 uppercase text-xs tracking-wider">BI & Analytics</h4>
+            <ul class="space-y-3 text-zinc-300 text-sm">
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fas fa-chart-bar text-yellow-500"></i> Power BI (DAX)
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fas fa-chart-line text-blue-400"></i> Tableau
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fab fa-google text-emerald-400"></i> Looker Studio
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fas fa-table text-green-400"></i> Excel / VBA
+                </li>
+            </ul>
+        </div>
+
+        <!-- Cloud -->
+        <div class="glass p-6 rounded-xl reveal reveal-delay-3">
+            <h4 class="text-sky-400 font-semibold mb-5 uppercase text-xs tracking-wider">Cloud & DevOps</h4>
+            <ul class="space-y-3 text-zinc-300 text-sm">
+                <li class="flex items-center justify-center gap-2">
+                    <i class="devicon-azure-plain text-sky-400 text-base"></i> Azure Cloud
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fas fa-bolt text-yellow-400"></i> Azure Functions
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <i class="devicon-git-plain text-orange-500 text-base"></i> Git / CI/CD
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <i class="fas fa-terminal text-zinc-300"></i> Unix / Bash
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════ -->
+<footer id="contact" class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center border-t border-[#27272a] text-zinc-500 text-sm">
+    <p>&copy; 2026 Pranay Girde. Crafted for scale.</p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="mailto:prngrd8@gmail.com"                                       class="hover:text-white transition">prngrd8@gmail.com</a>
+        <a href="https://www.linkedin.com/in/pranay-girde-b0501016b"             class="hover:text-white transition">LinkedIn</a>
+        <a href="https://github.com/Pranay62"                                    class="hover:text-white transition">GitHub</a>
+    </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════════════ -->
+<script>
+/* ── Typewriter ─────────────────────────────────────── */
+(function() {
+    const phrases = [
+        "Agentic AI Workflows.",
+        "Scalable ELT Pipelines.",
+        "RAG Architectures.",
+        "Cloud Data Systems."
+    ];
+    let phraseIdx = 0, charIdx = 0, isDeleting = false;
+    const el = document.getElementById('typed-text');
+
+    function tick() {
+        const current = phrases[phraseIdx];
+        el.textContent = isDeleting
+            ? current.substring(0, --charIdx)
+            : current.substring(0, ++charIdx);
+
+        if (!isDeleting && charIdx === current.length) {
+            isDeleting = true;
+            setTimeout(tick, 2000);
+            return;
+        }
+        if (isDeleting && charIdx === 0) {
+            isDeleting = false;
+            phraseIdx = (phraseIdx + 1) % phrases.length;
+        }
+        setTimeout(tick, isDeleting ? 45 : 85);
+    }
+    tick();
+})();
+
+/* ── Cursor glow ────────────────────────────────────── */
+(function() {
+    const glow = document.getElementById('cursor-glow');
+    let ticking = false;
+    document.addEventListener('mousemove', (e) => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top  = e.clientY + 'px';
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+    document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { glow.style.opacity = '1'; });
+})();
+
+/* ── Mobile menu ────────────────────────────────────── */
+(function() {
+    const menu    = document.getElementById('mobile-menu');
+    const openBtn = document.getElementById('menu-btn');
+    const closeBtn= document.getElementById('close-menu');
+
+    function open()  { menu.classList.remove('hidden'); menu.classList.add('flex'); }
+    function close() { menu.classList.add('hidden');    menu.classList.remove('flex'); }
+
+    openBtn.addEventListener('click',  open);
+    closeBtn.addEventListener('click', close);
+
+    // Close on any nav link click
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+})();
+
+/* ── Scroll reveal ──────────────────────────────────── */
+(function() {
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('animate-in');
+                io.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+
 </body>
 </html>
