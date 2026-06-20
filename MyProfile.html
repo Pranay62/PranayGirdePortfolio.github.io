@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience & Impact | Pranay Girde</title>
+    <meta name="description" content="6+ years of Pranay Girde's career: Senior Data Engineer at Nitor Infotech, TCS, Whole Foods Market & more.">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <script>
         tailwind.config = {
             theme: {
@@ -17,204 +20,389 @@
             }
         }
     </script>
+
     <style>
+        html { scroll-behavior: smooth; }
         body { background-color: #09090b; }
         .glass { background: rgba(24, 24, 27, 0.6); backdrop-filter: blur(12px); border: 1px solid #27272a; }
-        .blog-card { transition: all 0.3s ease; }
-        .blog-card:hover { border-color: #38bdf8; transform: translateY(-3px); }
-        .metric { color: #38bdf8; font-weight: 800; font-size: 1.1em; }
+
+        /* Metric highlight */
+        .metric {
+            color: #38bdf8;
+            font-weight: 800;
+            font-size: 1.05em;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .reveal.animate-in { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* Blog card hover */
+        .blog-card {
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .blog-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-4px);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.1);
+        }
+
+        /* Timeline line dot pulse for current role */
+        .dot-current {
+            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25);
+            animation: ring-pulse 2s ease-in-out infinite;
+        }
+        @keyframes ring-pulse {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25); }
+            50%       { box-shadow: 0 0 0 8px rgba(56, 189, 248, 0.1);  }
+        }
     </style>
 </head>
+
 <body class="text-zinc-300 font-sans antialiased">
 
-    <!-- NAVBAR -->
-    <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center max-w-7xl mx-auto mt-4 rounded-xl">
+<!-- ═══════════════════════════════════════════════════════
+     MOBILE MENU OVERLAY
+════════════════════════════════════════════════════════ -->
+<div id="mobile-menu"
+     class="fixed inset-0 z-50 bg-[#09090b]/95 backdrop-blur-md hidden flex-col items-center justify-center gap-10">
+    <button id="close-menu" class="absolute top-6 right-6 text-zinc-400 hover:text-white transition">
+        <i class="fas fa-times text-2xl"></i>
+    </button>
+    <a href="index.html#work" class="text-2xl font-bold text-white hover:text-accent transition">Case Studies</a>
+    <a href="projects.html"   class="text-2xl font-bold text-white hover:text-accent transition">All Projects</a>
+    <a href="innovation.html" class="text-2xl font-bold text-white hover:text-accent transition">Innovation Lab</a>
+    <a href="MyProfile.html"  class="text-2xl font-bold text-accent transition">Experience</a>
+    <a href="https://drive.google.com/file/d/197AjpqHGHhnQ6HDJTSLXi3GB3IRxWsUW/view?usp=sharing"
+       target="_blank"
+       class="mt-4 bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-zinc-200 transition">
+        Resume ↗
+    </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════════ -->
+<div class="fixed w-full z-40 px-4 pt-4">
+    <nav class="glass max-w-7xl mx-auto px-6 py-4 flex justify-between items-center rounded-xl">
         <a href="index.html" class="text-xl font-bold text-white tracking-tight">PG<span class="text-accent">.</span></a>
+
         <div class="hidden md:flex space-x-8 text-sm font-medium text-zinc-400">
             <a href="index.html#work" class="hover:text-white transition">Case Studies</a>
-            <a href="projects.html" class="hover:text-white transition">All Projects</a>
+            <a href="projects.html"   class="hover:text-white transition">All Projects</a>
             <a href="innovation.html" class="hover:text-white transition">Innovation Lab</a>
-            <a href="MyProfile.html" class="text-white transition">Experience</a>
+            <a href="MyProfile.html"  class="text-white border-b border-accent pb-0.5">Experience</a>
         </div>
-        <!-- REMINDER: Replace with your Google Drive Resume Link -->
-        <a href="https://drive.google.com/file/d/197AjpqHGHhnQ6HDJTSLXi3GB3IRxWsUW/view?usp=sharing" target="_blank" class="bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-zinc-200 transition">Resume</a>
+
+        <div class="flex items-center gap-3">
+            <a href="https://drive.google.com/file/d/197AjpqHGHhnQ6HDJTSLXi3GB3IRxWsUW/view?usp=sharing"
+               target="_blank"
+               class="bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-zinc-200 transition">
+                Resume
+            </a>
+            <button id="menu-btn" class="md:hidden text-zinc-400 hover:text-white transition p-1">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
     </nav>
+</div>
 
-    <!-- HERO -->
-    <header class="pt-32 pb-12 text-center px-6">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Experience & <span class="text-accent">🏆 Impact</span></h1>
-        <p class="max-w-2xl mx-auto text-zinc-400">6+ years of evolving from data analysis to architecting enterprise-grade cloud pipelines, microservices, and GenAI workflows.</p>
-    </header>
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════ -->
+<header class="pt-32 pb-12 text-center px-6 relative">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 relative z-10">
+        Experience &amp; <span class="text-accent">🏆 Impact</span>
+    </h1>
+    <p class="max-w-2xl mx-auto text-zinc-400 relative z-10">
+        6+ years of evolving from data analysis to architecting enterprise-grade cloud pipelines,
+        microservices, and GenAI workflows.
+    </p>
+</header>
 
-    <!-- TIMELINE -->
-    <section class="max-w-4xl mx-auto px-6 pb-24">
-        <div class="space-y-16 border-l-2 border-zinc-800 pl-8 relative">
-            
-            <!-- Nitor Infotech (Current & Flagship) -->
-            <div class="relative">
-                <span class="absolute -left-[42px] w-8 h-8 bg-accent rounded-full border-4 border-bg flex items-center justify-center shadow-lg shadow-accent/50"><i class="fas fa-star text-black text-xs"></i></span>
-                <div class="flex flex-wrap items-center gap-3 mb-2">
-                    <span class="text-sm text-accent font-mono font-bold">Sep 2023 - Present</span>
-                    <span class="px-2 py-0.5 bg-accent/20 text-accent text-xs font-bold rounded-full uppercase tracking-wider border border-accent/30">🌟 Flagship Role</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mt-1">Senior Data Engineer <span class="text-zinc-500 font-normal text-lg">@ Nitor Infotech</span></h3>
-                
-                <ul class="mt-6 space-y-4 text-zinc-400">
-                    <li class="flex items-start">
-                        <i class="fas fa-database text-accent mt-1.5 mr-3 w-4 text-center"></i>
-                        <span>Streamlined nationwide data management for <span class="text-white font-semibold">Albertsons</span> (U.S. retailer) by developing a centralized Promo Data Mart, enhancing data accessibility by <span class="metric">80%</span>.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-microchip text-purple-400 mt-1.5 mr-3 w-4 text-center"></i>
-                        <span>Architected a <span class="text-white font-semibold">zero-disruption Custom Product Hierarchy (CPH)</span> solution for Symphony Retail AI using <span class="text-white font-semibold">Azure Functions & Snowflake</span>.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-bolt text-yellow-400 mt-1.5 mr-3 w-4 text-center"></i>
-                        <span>Developed an additive microservice architecture that accelerated custom analytics delivery by <span class="metric">40%</span>.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-server text-emerald-400 mt-1.5 mr-3 w-4 text-center"></i>
-                        <span>Optimized performance and cost through serverless scaling and intelligent caching, reducing query latency by <span class="metric">65%</span>.</span>
-                    </li>
-                </ul>
-                <div class="flex flex-wrap gap-2 mt-6">
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Azure Functions</span>
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Snowflake</span>
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">PySpark</span>
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Databricks</span>
-                </div>
+<!-- ═══════════════════════════════════════════════════════
+     TIMELINE
+════════════════════════════════════════════════════════ -->
+<section class="max-w-4xl mx-auto px-6 pb-24">
+    <div class="space-y-16 border-l-2 border-zinc-800 pl-8 relative">
+
+        <!-- ── Nitor Infotech (Current) ── -->
+        <div class="relative reveal" data-company="Nitor Infotech">
+            <span class="dot-current absolute -left-[42px] w-8 h-8 bg-accent rounded-full border-4 border-[#09090b] flex items-center justify-center shadow-lg shadow-accent/40">
+                <i class="fas fa-star text-black text-xs"></i>
+            </span>
+            <div class="flex flex-wrap items-center gap-3 mb-2">
+                <span class="text-sm text-accent font-mono font-bold">Sep 2023 – Present</span>
+                <span class="px-2 py-0.5 bg-accent/20 text-accent text-xs font-bold rounded-full uppercase tracking-wider border border-accent/30">🌟 Flagship Role</span>
             </div>
+            <h3 class="text-2xl font-bold text-white mt-1">
+                Senior Data Engineer
+                <span class="text-zinc-500 font-normal text-lg">@ Nitor Infotech</span>
+            </h3>
 
-            <!-- Freelance -->
-            <div class="relative">
-                <span class="absolute -left-[40px] w-6 h-6 bg-zinc-600 rounded-full border-4 border-bg"></span>
-                <span class="text-sm text-zinc-500 font-mono">Mar 2023 - Nov 2023</span>
-                <h3 class="text-xl font-bold text-white mt-1">Freelance Data Analyst & Analytics Engineer</h3>
-                <ul class="mt-4 space-y-3 text-zinc-400">
-                    <li class="flex items-start">
-                        <i class="fas fa-wind text-cyan-400 mt-1.5 mr-3 w-4 text-center"></i>
-                        <span>Delivered dynamic Power BI dashboards and <span class="text-white font-semibold">Airflow-powered ETL pipelines</span>, improving client operational efficiency by <span class="metric">30%</span>.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-robot text-blue-400 mt-1.5 mr-3 w-4 text-center"></i>
-                        <span>Implemented Power Automate workflows to streamline repetitive tasks across organizational processes.</span>
-                    </li>
-                </ul>
-                <div class="flex flex-wrap gap-2 mt-4">
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Apache Airflow</span>
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Power BI</span>
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Power Automate</span>
-                </div>
-            </div>
-
-            <!-- Whole Foods -->
-            <div class="relative">
-                <span class="absolute -left-[40px] w-6 h-6 bg-zinc-600 rounded-full border-4 border-bg"></span>
-                <span class="text-sm text-zinc-500 font-mono">Feb 2022 - Feb 2023</span>
-                <h3 class="text-xl font-bold text-white mt-1">Support Analyst <span class="text-zinc-500 font-normal">@ Whole Foods Market (Amazon)</span></h3>
-                <ul class="mt-4 space-y-3 text-zinc-400">
-                    <li class="flex items-start">
-                        <i class="fas fa-code text-green-400 mt-1.5 mr-3 w-4 text-center"></i>
-                        <span>Automated order workflows with <span class="text-white font-semibold">VBA macros</span>, slashing processing time by <span class="metric">50%</span> and reducing errors by <span class="metric">75%</span>.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-table text-emerald-400 mt-1.5 mr-3 w-4 text-center"></i>
-                        <span>Organized and maintained a central order matrix in Excel, accurately recording <span class="metric">500+</span> orders/week in compliance with e-commerce SOPs.</span>
-                    </li>
-                </ul>
-                <div class="flex flex-wrap gap-2 mt-4">
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">VBA / Macros</span>
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Advanced Excel</span>
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">E-Commerce Ops</span>
-                </div>
-            </div>
-
-            <!-- TCS -->
-            <div class="relative">
-                <span class="absolute -left-[40px] w-6 h-6 bg-zinc-600 rounded-full border-4 border-bg"></span>
-                <span class="text-sm text-zinc-500 font-mono">Jan 2020 - Sep 2021</span>
-                <h3 class="text-xl font-bold text-white mt-1">Data Analyst & RPA Developer <span class="text-zinc-500 font-normal">@ Tata Consultancy Services</span></h3>
-                <ul class="mt-4 space-y-3 text-zinc-400">
-                    <li class="flex items-start">
-                        <i class="fas fa-warehouse text-orange-400 mt-1.5 mr-3 w-4 text-center"></i>
-                        <span>Collaborated with IT to implement a new data warehouse, reducing manual data entry by <span class="metric">80%</span>.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-cogs text-pink-400 mt-1.5 mr-3 w-4 text-center"></i>
-                        <span>Designed RPA solutions using <span class="text-white font-semibold">Automation Anywhere & UiPath</span> for Banking and E-commerce domains.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-chart-line text-yellow-400 mt-1.5 mr-3 w-4 text-center"></i>
-                        <span>Analyzed large datasets using SQL and Python, enhancing data accuracy by <span class="metric">95%</span>.</span>
-                    </li>
-                </ul>
-                <div class="flex flex-wrap gap-2 mt-4">
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Automation Anywhere</span>
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">UiPath</span>
-                    <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">SQL / Python</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EDUCATION & CERTS -->
-    <section class="max-w-6xl mx-auto px-6 pb-24">
-        <h2 class="text-3xl font-bold text-white mb-12 text-center">🎓 Education & <span class="text-accent">🏅 Certifications</span></h2>
-        <div class="grid md:grid-cols-2 gap-6 mb-12">
-            <div class="glass p-8 rounded-2xl border border-border hover:border-accent transition-all">
-                <span class="text-xs font-semibold text-accent uppercase tracking-wider">Master's Degree</span>
-                <h3 class="text-xl font-bold text-white mt-2">MS in Data Science</h3>
-                <p class="text-zinc-400 mt-1">Kingston University, London (2022 - 2023)</p>
-                <p class="text-zinc-500 text-sm mt-4">Grade: 70% (Merit). Focus on Deep Reinforcement Learning & NLP.</p>
-            </div>
-            <div class="glass p-8 rounded-2xl border border-border hover:border-accent transition-all">
-                <span class="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Bachelor's Degree</span>
-                <h3 class="text-xl font-bold text-white mt-2">B.E. in Computer Technology</h3>
-                <p class="text-zinc-400 mt-1">YCCE, Nagpur (2015 - 2019)</p>
-                <p class="text-zinc-500 text-sm mt-4">Grade: 8.2/10 CGPA.</p>
+            <ul class="mt-6 space-y-4 text-zinc-400">
+                <li class="flex items-start">
+                    <i class="fas fa-database text-accent mt-1.5 mr-3 w-4 text-center flex-shrink-0"></i>
+                    <span>Streamlined nationwide data management for <span class="text-white font-semibold">Albertsons</span> (U.S. retailer) by developing a centralized Promo Data Mart, enhancing data accessibility by <span class="metric" data-target="80" data-suffix="%">0%</span>.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-microchip text-purple-400 mt-1.5 mr-3 w-4 text-center flex-shrink-0"></i>
+                    <span>Architected a <span class="text-white font-semibold">zero-disruption Custom Product Hierarchy (CPH)</span> solution for Symphony Retail AI using <span class="text-white font-semibold">Azure Functions &amp; Snowflake</span>.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-bolt text-yellow-400 mt-1.5 mr-3 w-4 text-center flex-shrink-0"></i>
+                    <span>Developed an additive microservice architecture that accelerated custom analytics delivery by <span class="metric" data-target="40" data-suffix="%">0%</span>.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-server text-emerald-400 mt-1.5 mr-3 w-4 text-center flex-shrink-0"></i>
+                    <span>Optimized performance and cost through serverless scaling and intelligent caching, reducing query latency by <span class="metric" data-target="65" data-suffix="%">0%</span>.</span>
+                </li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-6">
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Azure Functions</span>
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Snowflake</span>
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">PySpark</span>
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Databricks</span>
             </div>
         </div>
 
-        <!-- Certifications Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm">
-            <div class="glass p-4 rounded-lg flex items-center space-x-3"><i class="fas fa-certificate text-yellow-500"></i><span class="text-zinc-300">Google Data Analytics Professional</span></div>
-            <div class="glass p-4 rounded-lg flex items-center space-x-3"><i class="fas fa-robot text-purple-400"></i><span class="text-zinc-300">Automation Anywhere Certified</span></div>
-            <div class="glass p-4 rounded-lg flex items-center space-x-3"><i class="fas fa-database text-blue-400"></i><span class="text-zinc-300">Spark SQL & DataFrames</span></div>
-            <div class="glass p-4 rounded-lg flex items-center space-x-3"><i class="fas fa-chart-bar text-emerald-400"></i><span class="text-zinc-300">Masterclass: Excel, PowerBI, Tableau</span></div>
-            <div class="glass p-4 rounded-lg flex items-center space-x-3"><i class="fas fa-cloud text-sky-400"></i><span class="text-zinc-300">Databases and SQL for Data Science</span></div>
+        <!-- ── Freelance ── -->
+        <div class="relative reveal" data-company="Freelance">
+            <span class="absolute -left-[40px] w-6 h-6 bg-zinc-600 rounded-full border-4 border-[#09090b]"></span>
+            <span class="text-sm text-zinc-500 font-mono">Mar 2023 – Nov 2023</span>
+            <h3 class="text-xl font-bold text-white mt-1">Freelance Data Analyst &amp; Analytics Engineer</h3>
+            <ul class="mt-4 space-y-3 text-zinc-400">
+                <li class="flex items-start">
+                    <i class="fas fa-wind text-cyan-400 mt-1.5 mr-3 w-4 text-center flex-shrink-0"></i>
+                    <span>Delivered dynamic Power BI dashboards and <span class="text-white font-semibold">Airflow-powered ETL pipelines</span>, improving client operational efficiency by <span class="metric" data-target="30" data-suffix="%">0%</span>.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-robot text-blue-400 mt-1.5 mr-3 w-4 text-center flex-shrink-0"></i>
+                    <span>Implemented Power Automate workflows to streamline repetitive tasks across organizational processes.</span>
+                </li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Apache Airflow</span>
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Power BI</span>
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Power Automate</span>
+            </div>
         </div>
-    </section>
 
-    <!-- THOUGHT LEADERSHIP (BLOGS) -->
-    <section id="blogs" class="max-w-6xl mx-auto px-6 pb-24 border-t border-border pt-24">
-        <h2 class="text-3xl font-bold text-white mb-4 text-center">✍️ Technical <span class="text-accent">Insights</span></h2>
-        <p class="text-zinc-400 text-center mb-12 max-w-2xl mx-auto">Writing about the future of AI, Vector Databases, and Software Engineering.</p>
-        
-        <div class="grid md:grid-cols-2 gap-6">
-            <a href="https://www.nitorinfotech.com/blog/empowering-ai-with-ollama-the-future-of-software-engineering/" target="_blank" class="blog-card glass p-8 rounded-2xl border border-border block">
-                <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Article • AI Engineering</span>
-                <h3 class="text-xl font-bold text-white mt-2 mb-4">Empowering AI with Ollama: The Future of Software Engineering</h3>
-                <p class="text-zinc-400 text-sm flex-grow mb-4">Exploring how local LLMs and Ollama are shifting the paradigm of enterprise software development and data privacy.</p>
-                <span class="text-accent text-sm font-semibold hover:underline">Read Article <i class="fas fa-arrow-right ml-1"></i></span>
-            </a>
-
-            <a href="https://www.nitorinfotech.com/blog/unleashing-the-power-of-qdrant-cloud-a-vector-search-revolution/" target="_blank" class="blog-card glass p-8 rounded-2xl border border-border block">
-                <span class="text-xs font-bold text-accent uppercase tracking-wider">Article • Vector Search</span>
-                <h3 class="text-xl font-bold text-white mt-2 mb-4">Unleashing the Power of Qdrant Cloud: A Vector Search Revolution</h3>
-                <p class="text-zinc-400 text-sm flex-grow mb-4">Deep dive into Qdrant Cloud and how vector databases are the backbone of modern RAG and Agentic AI architectures.</p>
-                <span class="text-accent text-sm font-semibold hover:underline">Read Article <i class="fas fa-arrow-right ml-1"></i></span>
-            </a>
+        <!-- ── Whole Foods ── -->
+        <div class="relative reveal" data-company="Whole Foods (Amazon)">
+            <span class="absolute -left-[40px] w-6 h-6 bg-zinc-600 rounded-full border-4 border-[#09090b]"></span>
+            <span class="text-sm text-zinc-500 font-mono">Feb 2022 – Feb 2023</span>
+            <h3 class="text-xl font-bold text-white mt-1">
+                Support Analyst
+                <span class="text-zinc-500 font-normal">@ Whole Foods Market (Amazon)</span>
+            </h3>
+            <ul class="mt-4 space-y-3 text-zinc-400">
+                <li class="flex items-start">
+                    <i class="fas fa-code text-green-400 mt-1.5 mr-3 w-4 text-center flex-shrink-0"></i>
+                    <span>Automated order workflows with <span class="text-white font-semibold">VBA macros</span>, slashing processing time by <span class="metric" data-target="50" data-suffix="%">0%</span> and reducing errors by <span class="metric" data-target="75" data-suffix="%">0%</span>.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-table text-emerald-400 mt-1.5 mr-3 w-4 text-center flex-shrink-0"></i>
+                    <span>Organized and maintained a central order matrix, accurately recording <span class="metric" data-target="500" data-suffix="+">0+</span> orders/week in compliance with e-commerce SOPs.</span>
+                </li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">VBA / Macros</span>
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Advanced Excel</span>
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">E-Commerce Ops</span>
+            </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center border-t border-border text-zinc-500 text-sm">
-        <p>&copy; 2026 Pranay Girde. Crafted for scale.</p>
-        <div class="flex space-x-6 mt-4 md:mt-0">
-            <a href="mailto:prngrd8@gmail.com" class="hover:text-white transition">prngrd8@gmail.com</a>
-            <a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="hover:text-white transition">LinkedIn</a>
-            <a href="https://github.com/Pranay62" class="hover:text-white transition">GitHub</a>
+        <!-- ── TCS ── -->
+        <div class="relative reveal" data-company="TCS">
+            <span class="absolute -left-[40px] w-6 h-6 bg-zinc-600 rounded-full border-4 border-[#09090b]"></span>
+            <span class="text-sm text-zinc-500 font-mono">Jan 2020 – Sep 2021</span>
+            <h3 class="text-xl font-bold text-white mt-1">
+                Data Analyst &amp; RPA Developer
+                <span class="text-zinc-500 font-normal">@ Tata Consultancy Services</span>
+            </h3>
+            <ul class="mt-4 space-y-3 text-zinc-400">
+                <li class="flex items-start">
+                    <i class="fas fa-warehouse text-orange-400 mt-1.5 mr-3 w-4 text-center flex-shrink-0"></i>
+                    <span>Collaborated with IT to implement a new data warehouse, reducing manual data entry by <span class="metric" data-target="80" data-suffix="%">0%</span>.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-cogs text-pink-400 mt-1.5 mr-3 w-4 text-center flex-shrink-0"></i>
+                    <span>Designed RPA solutions using <span class="text-white font-semibold">Automation Anywhere &amp; UiPath</span> for Banking and E-commerce domains.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-chart-line text-yellow-400 mt-1.5 mr-3 w-4 text-center flex-shrink-0"></i>
+                    <span>Analyzed large datasets using SQL and Python, enhancing data accuracy by <span class="metric" data-target="95" data-suffix="%">0%</span>.</span>
+                </li>
+            </ul>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">Automation Anywhere</span>
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">UiPath</span>
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300 border border-zinc-700">SQL / Python</span>
+            </div>
         </div>
-    </footer>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     EDUCATION & CERTIFICATIONS
+════════════════════════════════════════════════════════ -->
+<section class="max-w-6xl mx-auto px-6 pb-24">
+    <h2 class="text-3xl font-bold text-white mb-12 text-center reveal">
+        🎓 Education &amp; <span class="text-accent">🏅 Certifications</span>
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <div class="glass p-8 rounded-2xl border border-[#27272a] hover:border-accent transition-all duration-300 reveal">
+            <span class="text-xs font-semibold text-accent uppercase tracking-wider">Master's Degree</span>
+            <h3 class="text-xl font-bold text-white mt-2">MS in Data Science</h3>
+            <p class="text-zinc-400 mt-1">Kingston University, London (2022 – 2023)</p>
+            <p class="text-zinc-500 text-sm mt-4">Grade: 70% (Merit). Focus on Deep Reinforcement Learning &amp; NLP.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl border border-[#27272a] hover:border-accent transition-all duration-300 reveal reveal-delay-1">
+            <span class="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Bachelor's Degree</span>
+            <h3 class="text-xl font-bold text-white mt-2">B.E. in Computer Technology</h3>
+            <p class="text-zinc-400 mt-1">YCCE, Nagpur (2015 – 2019)</p>
+            <p class="text-zinc-500 text-sm mt-4">Grade: 8.2/10 CGPA.</p>
+        </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+        <div class="glass p-4 rounded-lg flex items-center space-x-3 hover:border-accent transition-all duration-300 reveal">
+            <i class="fas fa-certificate text-yellow-500 flex-shrink-0"></i>
+            <span class="text-zinc-300">Google Data Analytics Professional</span>
+        </div>
+        <div class="glass p-4 rounded-lg flex items-center space-x-3 hover:border-accent transition-all duration-300 reveal reveal-delay-1">
+            <i class="fas fa-robot text-purple-400 flex-shrink-0"></i>
+            <span class="text-zinc-300">Automation Anywhere Certified</span>
+        </div>
+        <div class="glass p-4 rounded-lg flex items-center space-x-3 hover:border-accent transition-all duration-300 reveal reveal-delay-2">
+            <i class="fas fa-database text-blue-400 flex-shrink-0"></i>
+            <span class="text-zinc-300">Spark SQL &amp; DataFrames</span>
+        </div>
+        <div class="glass p-4 rounded-lg flex items-center space-x-3 hover:border-accent transition-all duration-300 reveal reveal-delay-3">
+            <i class="fas fa-chart-bar text-emerald-400 flex-shrink-0"></i>
+            <span class="text-zinc-300">Masterclass: Excel, PowerBI, Tableau</span>
+        </div>
+        <div class="glass p-4 rounded-lg flex items-center space-x-3 hover:border-accent transition-all duration-300 reveal reveal-delay-4">
+            <i class="fas fa-cloud text-sky-400 flex-shrink-0"></i>
+            <span class="text-zinc-300">Databases &amp; SQL for Data Science</span>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     THOUGHT LEADERSHIP / BLOGS
+════════════════════════════════════════════════════════ -->
+<section id="blogs" class="max-w-6xl mx-auto px-6 pb-24 border-t border-[#27272a] pt-24">
+    <h2 class="text-3xl font-bold text-white mb-4 text-center reveal">
+        ✍️ Technical <span class="text-accent">Insights</span>
+    </h2>
+    <p class="text-zinc-400 text-center mb-12 max-w-2xl mx-auto reveal">
+        Writing about the future of AI, Vector Databases, and Software Engineering.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+        <a href="https://www.nitorinfotech.com/blog/empowering-ai-with-ollama-the-future-of-software-engineering/"
+           target="_blank"
+           class="blog-card glass p-8 rounded-2xl border border-[#27272a] block reveal">
+            <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Article · AI Engineering</span>
+            <h3 class="text-xl font-bold text-white mt-2 mb-4">Empowering AI with Ollama: The Future of Software Engineering</h3>
+            <p class="text-zinc-400 text-sm mb-4">Exploring how local LLMs and Ollama are shifting the paradigm of enterprise software development and data privacy.</p>
+            <span class="text-accent text-sm font-semibold">Read Article <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
+        </a>
+
+        <a href="https://www.nitorinfotech.com/blog/unleashing-the-power-of-qdrant-cloud-a-vector-search-revolution/"
+           target="_blank"
+           class="blog-card glass p-8 rounded-2xl border border-[#27272a] block reveal reveal-delay-1">
+            <span class="text-xs font-bold text-accent uppercase tracking-wider">Article · Vector Search</span>
+            <h3 class="text-xl font-bold text-white mt-2 mb-4">Unleashing the Power of Qdrant Cloud: A Vector Search Revolution</h3>
+            <p class="text-zinc-400 text-sm mb-4">Deep dive into Qdrant Cloud and how vector databases are the backbone of modern RAG and Agentic AI architectures.</p>
+            <span class="text-accent text-sm font-semibold">Read Article <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
+        </a>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════ -->
+<footer class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center border-t border-[#27272a] text-zinc-500 text-sm">
+    <p>&copy; 2026 Pranay Girde. Crafted for scale.</p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="mailto:prngrd8@gmail.com"                           class="hover:text-white transition">prngrd8@gmail.com</a>
+        <a href="https://www.linkedin.com/in/pranay-girde-b0501016b" class="hover:text-white transition">LinkedIn</a>
+        <a href="https://github.com/Pranay62"                        class="hover:text-white transition">GitHub</a>
+    </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════════════ -->
+<script>
+/* ── Mobile menu ──────────────────────────────────── */
+(function() {
+    const menu     = document.getElementById('mobile-menu');
+    const openBtn  = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-menu');
+    const open  = () => { menu.classList.remove('hidden'); menu.classList.add('flex'); };
+    const close = () => { menu.classList.add('hidden');    menu.classList.remove('flex'); };
+    openBtn.addEventListener('click',  open);
+    closeBtn.addEventListener('click', close);
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+})();
+
+/* ── Scroll reveal ────────────────────────────────── */
+(function() {
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('animate-in'); io.unobserve(e.target); }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+
+/* ── Animated metric counters ─────────────────────── */
+(function() {
+    function animateCounter(el) {
+        const target   = parseFloat(el.dataset.target);
+        const suffix   = el.dataset.suffix || '';
+        const duration = 1600;
+        const startTs  = performance.now();
+
+        function update(now) {
+            const progress = Math.min((now - startTs) / duration, 1);
+            // Ease-out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(target * eased) + suffix;
+            if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+    }
+
+    const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                animateCounter(e.target);
+                counterObserver.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+})();
+</script>
+
 </body>
 </html>
